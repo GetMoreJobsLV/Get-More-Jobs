@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get More Jobs for Contractors</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white p-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="/path/to/logo1.png" alt="Get More Jobs Logo" class="h-10 w-auto">
+        <h1 class="text-xl font-bold">Get More Jobs</h1>
+      </div>
+      <nav class="space-x-4">
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-100 py-20 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Helping Contractors & Business Owners Get More Jobs</h2>
+      <p class="text-lg mb-6">Let us take care of your marketing and lead generation while you focus on what you do best — the work.</p>
+      <a href="#contact" class="bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-10">Our Services</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-semibold mb-2">Lead Generation</h4>
+          <p>We build custom pipelines to bring you high-quality leads ready to hire.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-semibold mb-2">Website & Branding</h4>
+          <p>Your digital presence matters. We create conversion-focused sites tailored to your business.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-semibold mb-2">Online Ads</h4>
+          <p>Google, Meta, and more — we handle ad strategy, creative, and budget optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="max-w-2xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Let's Work Together</h3>
+      <p class="mb-8 text-lg">Fill out the form and we’ll reach out within 24 hours to discuss how we can help you get more jobs.</p>
+      <form class="space-y-4 text-left">
+        <input type="text" placeholder="Your Name" class="w-full border border-gray-300 p-3 rounded" required />
+        <input type="email" placeholder="Your Email" class="w-full border border-gray-300 p-3 rounded" required />
+        <input type="text" placeholder="Company Name" class="w-full border border-gray-300 p-3 rounded" />
+        <textarea placeholder="Tell us what you need help with" class="w-full border border-gray-300 p-3 rounded" rows="4"></textarea>
+        <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center p-4">
+    <p>&copy; 2025 Get More Jobs. All rights reserved.</p>
+  </footer>
+</body>
+</html>
