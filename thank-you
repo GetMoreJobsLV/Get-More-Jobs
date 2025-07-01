@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800 flex items-center justify-center min-h-screen">
+  <div class="text-center p-8 bg-gray-100 rounded shadow-md max-w-md">
+    <h1 class="text-3xl font-bold mb-4">Thank You!</h1>
+    <p class="text-lg mb-4">We’ve received your message and will be in touch within 24 hours.</p>
+    <p class="mb-6">In the meantime, follow us on Instagram to see how we’re helping contractors like you get more jobs.</p>
+    <a href="https://www.instagram.com/getmorejobslv/" target="_blank" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+      Visit Our Instagram
+    </a>
+  </div>
+</body>
+</html>
