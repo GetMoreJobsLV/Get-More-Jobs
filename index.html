@@ -56,16 +56,27 @@
   <div class="max-w-2xl mx-auto text-center">
     <h3 class="text-3xl font-bold mb-6">Let's Work Together</h3>
     <p class="mb-8 text-lg">Fill out the form and we’ll reach out within 24 hours to discuss how we can help you get more jobs.</p>
-    <form name="contact" method="POST" data-netlify="true" class="space-y-4 text-left">
-      <input type="hidden" name="form-name" value="contact">
+  <div id="form-container">
+  <form name="contact" method="POST" data-netlify="true" class="space-y-4 text-left" onsubmit="showThankYou(event)">
+    <input type="hidden" name="form-name" value="contact">
 
-      <input type="text" name="name" placeholder="Your Name" class="w-full border border-gray-300 p-3 rounded" required />
-      <input type="email" name="email" placeholder="Your Email" class="w-full border border-gray-300 p-3 rounded" required />
-      <input type="text" name="company" placeholder="Company Name" class="w-full border border-gray-300 p-3 rounded" />
-      <textarea name="message" placeholder="Tell us what you need help with" class="w-full border border-gray-300 p-3 rounded" rows="4"></textarea>
-      
-      <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
-    </form>
+    <input type="text" name="name" placeholder="Your Name" class="w-full border border-gray-300 p-3 rounded" required />
+    <input type="email" name="email" placeholder="Your Email" class="w-full border border-gray-300 p-3 rounded" required />
+    <input type="tel" name="phone" placeholder="Phone Number" class="w-full border border-gray-300 p-3 rounded" required />
+    <input type="text" name="industry" placeholder="Industry of Business" class="w-full border border-gray-300 p-3 rounded" required />
+
+    <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+  </form>
+</div>
+
+<div id="thank-you-message" class="hidden text-center p-8 bg-gray-100 rounded shadow-md max-w-md mx-auto mt-10">
+  <h2 class="text-3xl font-bold mb-4">Thank You!</h2>
+  <p class="mb-4">We’ve received your message and will be in touch shortly.</p>
+  <p class="mb-6">In the meantime, follow us on Instagram for updates and tips:</p>
+  <a href="https://www.instagram.com/getmorejobslv/" target="_blank" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+    Visit Our Instagram
+  </a>
+</div>
   </div>
 </section>
 
@@ -73,5 +84,17 @@
   <footer class="bg-blue-900 text-white text-center p-4">
     <p>&copy; 2025 Get More Jobs. All rights reserved.</p>
   </footer>
+  <script>
+  function showThankYou(event) {
+    event.preventDefault(); // Prevent page from reloading
+    const form = event.target;
+
+    // Optional: simulate Netlify processing time
+    setTimeout(() => {
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('thank-you-message').classList.remove('hidden');
+    }, 100);
+  }
+</script>
 </body>
 </html>
