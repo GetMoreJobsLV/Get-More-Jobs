@@ -53,18 +53,21 @@
 
   <!-- Contact Section -->
   <section id="contact" class="py-20 bg-gray-100">
-    <div class="max-w-2xl mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-6">Let's Work Together</h3>
-      <p class="mb-8 text-lg">Fill out the form and we’ll reach out within 24 hours to discuss how we can help you get more jobs.</p>
-      <form class="space-y-4 text-left">
-        <input type="text" placeholder="Your Name" class="w-full border border-gray-300 p-3 rounded" required />
-        <input type="email" placeholder="Your Email" class="w-full border border-gray-300 p-3 rounded" required />
-        <input type="text" placeholder="Company Name" class="w-full border border-gray-300 p-3 rounded" />
-        <textarea placeholder="Tell us what you need help with" class="w-full border border-gray-300 p-3 rounded" rows="4"></textarea>
-        <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
-      </form>
-    </div>
-  </section>
+  <div class="max-w-2xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">Let's Work Together</h3>
+    <p class="mb-8 text-lg">Fill out the form and we’ll reach out within 24 hours to discuss how we can help you get more jobs.</p>
+    <form name="contact" method="POST" data-netlify="true" class="space-y-4 text-left">
+      <input type="hidden" name="form-name" value="contact">
+
+      <input type="text" name="name" placeholder="Your Name" class="w-full border border-gray-300 p-3 rounded" required />
+      <input type="email" name="email" placeholder="Your Email" class="w-full border border-gray-300 p-3 rounded" required />
+      <input type="text" name="company" placeholder="Company Name" class="w-full border border-gray-300 p-3 rounded" />
+      <textarea name="message" placeholder="Tell us what you need help with" class="w-full border border-gray-300 p-3 rounded" rows="4"></textarea>
+      
+      <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+    </form>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="bg-blue-900 text-white text-center p-4">
