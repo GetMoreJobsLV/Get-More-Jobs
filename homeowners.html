@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get More Jobs – For Homeowners</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Find trusted, reliable contractors near you. Get More Jobs connects homeowners with verified professionals.">
+  <meta name="keywords" content="home repair, contractors, renovation, hire professionals, home services, find workers">
+  <meta name="author" content="Get More Jobs">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Get More Jobs – For Homeowners" />
+  <meta property="og:description" content="Find and hire reliable contractors with Get More Jobs. Fast, trusted service for homeowners." />
+  <meta property="og:image" content="https://yourdomain.com/images/logo2.png" />
+  <meta property="og:url" content="https://yourdomain.com/homeowners.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white px-6 py-4">
+    <div class="max-w-6xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
+      <div class="flex items-center">
+        <img src="logo3.png" alt="Get More Jobs Logo" class="h-[4rem] w-auto p-1 drop-shadow-lg">
+      </div>
+      <nav class="flex flex-wrap gap-3 justify-center md:justify-end mt-4 md:mt-0">
+        <a href="/contractors.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">For Contractors</a>
+        <a href="/about.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">About Us</a>
+        <a href="/faq.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">FAQ</a>
+        <a href="/resources.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Resources</a>
+        <a href="#contact" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-100 py-20 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Find Trusted Contractors Near You</h2>
+      <p class="text-lg mb-6">Let us help you connect with pre-screened professionals for your next home project.</p>
+      <a href="#contact" class="bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Get Matched</a>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-10">How It Works</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-semibold mb-2">Tell Us What You Need</h4>
+          <p>Submit your project details and we'll find contractors who match your needs.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-semibold mb-2">Get Matched Quickly</h4>
+          <p>We’ll connect you with qualified professionals — typically within 24 hours.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-semibold mb-2">Choose With Confidence</h4>
+          <p>Review your matches, ask questions, and hire the right person for the job.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="max-w-2xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Request a Match</h3>
+      <p class="mb-8 text-lg">Fill out the form and we’ll connect you with reliable contractors in your area.</p>
+      <form name="homeowner-contact" method="POST" data-netlify="true" action="/thank-you.html" class="space-y-4 text-left">
+        <input type="hidden" name="form-name" value="homeowner-contact" />
+        
+        <input type="text" name="name" placeholder="Your Name" class="w-full border border-gray-300 p-3 rounded" required />
+        <input type="email" name="email" placeholder="Your Email" class="w-full border border-gray-300 p-3 rounded" required />
+        <input type="tel" name="phone" placeholder="Phone Number" class="w-full border border-gray-300 p-3 rounded" required />
+        <input type="text" name="project-type" placeholder="Type of Project (e.g. kitchen, fence, roofing)" class="w-full border border-gray-300 p-3 rounded" required />
+
+        <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Submit Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center p-4">
+    <p>&copy; 2025 Get More Jobs. All rights reserved.</p>
+  </footer>
+</body>
+</html>
