@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flyer 1 – Claim Your Offer | Get More Jobs</title>
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KNDTWBK3QF');
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Claim your exclusive offer from Get More Jobs – trusted contractors near you.">
+  <meta name="keywords" content="home improvement, contractor offers, home services, Get More Jobs flyer">
+  <meta name="author" content="Get More Jobs">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Get More Jobs – Claim Your Offer" />
+  <meta property="og:description" content="Fill out this form to claim your special flyer offer. Trusted contractors are just a click away." />
+  <meta property="og:image" content="https://yourdomain.com/images/logo2.png" />
+  <meta property="og:url" content="https://yourdomain.com/flyer1.html" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/index.html">
+        <img src="logo3.png" alt="Get More Jobs Logo" class="h-16 p-1 drop-shadow-lg hover:opacity-90 transition" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Lead Capture Form -->
+  <main class="py-16 px-6">
+    <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow">
+      <h1 class="text-3xl font-bold mb-6 text-center">Claim Your Exclusive Offer</h1>
+      <form name="flyer1-leads" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="space-y-4">
+        <input type="hidden" name="form-name" value="flyer1-leads" />
+        <input type="hidden" name="source" value="flyer1" />
+        <p hidden>
+          <label>Don’t fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <input type="text" name="name" placeholder="Your Full Name" required class="w-full border border-gray-300 p-3 rounded" />
+        <input type="tel" name="phone" placeholder="Phone Number" required class="w-full border border-gray-300 p-3 rounded" />
+        <input type="email" name="email" placeholder="Email Address" required class="w-full border border-gray-300 p-3 rounded" />
+
+        <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded hover:bg-blue-700 transition">Secure your spot</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center p-4">
+    <p>&copy; 2025 Get More Jobs. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
