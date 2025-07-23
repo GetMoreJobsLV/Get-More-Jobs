@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Alpha Pet Cleanups</title>
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KNDTWBK3QF');
+  </script>
+</head>
+<body class="bg-blue-900 text-white flex flex-col items-center justify-center min-h-screen text-center p-6">
+
+  <a href="/index.html">
+    <img src="logo3.png" alt="Alpha Pet Cleanups Logo" class="h-[4rem] w-auto mb-6 drop-shadow-lg hover:opacity-90 transition">
+  </a>
+
+  <h1 class="text-3xl font-bold mb-4">Thank You!</h1>
+  <p class="text-lg mb-4">We appreciate you! Your pets deserve the best — and we’re here for them.</p>
+  <p class="mb-6">Follow us on Instagram or click below to visit our website:</p>
+
+  <div class="flex flex-col gap-4 w-full max-w-xs">
+    <a href="https://www.instagram.com/alphapetcleanups/" target="_blank" class="inline-block bg-pink-500 text-white px-5 py-3 rounded-full hover:bg-pink-600 transition">
+      <i class="fab fa-instagram fa-lg mr-2"></i> @alphapetcleanups
+    </a>
+
+    <a href="https://apccleanups.com/" target="_blank" class="inline-block bg-white text-blue-900 font-semibold px-5 py-3 rounded-full hover:bg-gray-100 transition">
+      Visit Our Website
+    </a>
+  </div>
+
+</body>
+</html>
