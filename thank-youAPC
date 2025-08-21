@@ -27,11 +27,11 @@
   <p class="mb-6">Follow us on Instagram or click below to visit our website:</p>
 
   <div class="flex flex-col gap-4 w-full max-w-xs">
-    <a href="https://www.instagram.com/alphapetcleanups/" target="_blank" class="inline-block bg-pink-500 text-white px-5 py-3 rounded-full hover:bg-pink-600 transition">
-      <i class="fab fa-instagram fa-lg mr-2"></i> @alphapetcleanups
+    <a href="https://www.instagram.com/elitepaintingllc/" target="_blank" class="inline-block bg-pink-500 text-white px-5 py-3 rounded-full hover:bg-pink-600 transition">
+      <i class="fab fa-instagram fa-lg mr-2"></i> @elitepaintingllc
     </a>
 
-    <a href="https://apccleanups.com/" target="_blank" class="inline-block bg-white text-blue-900 font-semibold px-5 py-3 rounded-full hover:bg-gray-100 transition">
+    <a href="https://www.elitepaintingllcnv.com/" target="_blank" class="inline-block bg-white text-blue-900 font-semibold px-5 py-3 rounded-full hover:bg-gray-100 transition">
       Visit Our Website
     </a>
   </div>
