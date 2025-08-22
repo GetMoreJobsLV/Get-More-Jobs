@@ -29,6 +29,24 @@
   <meta property="og:image" content="https://yourdomain.com/images/logo2.png" />
   <meta property="og:url" content="https://yourdomain.com/flyer1.html" />
   <meta property="og:type" content="website" />
+
+  <!-- Meta Pixel Code (Elite Painting) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1474983836974545');   // <-- your Pixel ID
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1474983836974545&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 
 <body class="bg-gray-100 text-gray-900">
@@ -46,19 +64,80 @@
   <main class="py-16 px-6">
     <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow">
       <h1 class="text-3xl font-bold mb-6 text-center">Claim Your Exclusive Offer</h1>
-      <form name="fear" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-youAPC.html" class="space-y-4">
-        <input type="hidden" name="form-name" value="fear" />
-        <input type="hidden" name="source" value="fear" />
+
+      <!-- Netlify requires a static form name to detect at build time -->
+      <form
+        id="elite-lead-form"
+        name="elite-lead"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/thank-youAPC.html"
+        class="space-y-4"
+      >
+        <!-- Netlify build-time detection -->
+        <input type="hidden" name="form-name" value="elite-lead" />
+
+        <!-- We'll store the user's name here so submissions are labeled with it -->
+        <input type="hidden" name="form_label" id="form_label" value="" />
+
+        <!-- (Optional) keep track of source if you use multiple flyers/variants -->
+        <input type="hidden" name="source" value="flyer1" />
+
         <p hidden>
           <label>Don’t fill this out: <input name="bot-field" /></label>
         </p>
 
-        <input type="text" name="name" placeholder="Your Full Name" required class="w-full border border-gray-300 p-3 rounded" />
-        <input type="tel" name="phone" placeholder="Phone Number" required class="w-full border border-gray-300 p-3 rounded" />
-        <input type="email" name="email" placeholder="Email Address" required class="w-full border border-gray-300 p-3 rounded" />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Your Full Name"
+          required
+          class="w-full border border-gray-300 p-3 rounded"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          required
+          class="w-full border border-gray-300 p-3 rounded"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          required
+          class="w-full border border-gray-300 p-3 rounded"
+        />
 
-        <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded hover:bg-blue-700 transition">Secure your spot</button>
+        <button
+          type="submit"
+          class="w-full bg-blue-900 text-white py-3 rounded hover:bg-blue-700 transition"
+        >
+          Secure your spot
+        </button>
       </form>
+
+      <!-- Bind the user's name to the submission + fire Meta Lead event -->
+      <script>
+        (function () {
+          var form = document.getElementById('elite-lead-form');
+          var nameInput = document.getElementById('name');
+          var labelInput = document.getElementById('form_label');
+
+          form.addEventListener('submit', function () {
+            // Tag the submission with the user's name
+            if (nameInput && labelInput) {
+              labelInput.value = nameInput.value.trim();
+            }
+            // Fire the Meta Lead conversion
+            if (typeof fbq === 'function') {
+              fbq('track', 'Lead');
+            }
+          });
+        })();
+      </script>
     </div>
   </main>
 
