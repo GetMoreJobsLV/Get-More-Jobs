@@ -2,199 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DailyDealzFinder | Get More Jobs</title>
-  <meta name="description" content="DailyDealzFinder by Get More Jobs — weekly updated picks of trending Amazon deals with quick links and short descriptions." />
-  <link rel="icon" href="/favicon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DailyDealzFinder – Get More Jobs</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="DailyDealzFinder | Get More Jobs" />
-  <meta property="og:description" content="Weekly updated Amazon deals curated by DailyDealzFinder (a GMJ brand)."/>
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.com/deals.html" />
-  <meta property="og:image" content="https://your-domain.com/og-image.png" />
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
 
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- Google Analytics (G-KNDTWBK3QF) -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-KNDTWBK3QF');
   </script>
 
-  <!-- Basic styles to keep cards neat if Tailwind loads late -->
-  <style>
-    .line-clamp-2 {
-      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-    }
-  </style>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="DailyDealzFinder by Get More Jobs — weekly updated Amazon deal picks with quick links and short descriptions." />
+  <meta name="keywords" content="amazon deals, daily deals, product finds, trending products, save money" />
+  <meta name="author" content="Get More Jobs" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="DailyDealzFinder – Get More Jobs" />
+  <meta property="og:description" content="Weekly updated Amazon deals curated by DailyDealzFinder (a GMJ brand)." />
+  <meta property="og:image" content="https://yourdomain.com/images/logo2.png" />
+  <meta property="og:url" content="https://yourdomain.com/dailydealzfinder.html" />
+  <meta property="og:type" content="website" />
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <!-- Header -->
-  <header class="bg-white border-b sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <!-- Logo linked to homepage (per your standard) -->
-      <a href="/index.html" class="flex items-center space-x-3">
-        <!-- Replace src with your current logo file -->
-        <img src="/assets/logo-briefcase-rocket-blue.svg" alt="Get More Jobs" class="h-8 w-auto">
-        <span class="font-semibold tracking-tight">Get More Jobs</span>
-      </a>
-      <nav class="flex items-center gap-2">
-        <!-- Global nav buttons you like to keep around -->
-        <a href="/index.html" class="px-3 py-2 rounded-lg border text-sm hover:bg-gray-50">Home</a>
-        <button onclick="history.back()" class="px-3 py-2 rounded-lg border text-sm hover:bg-gray-50">Back</button>
+<body class="bg-white text-gray-800">
+
+  <!-- Header (matches your blue/white style) -->
+  <header class="bg-blue-900 text-white px-6 py-4">
+    <div class="max-w-6xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
+      <div class="flex items-center">
+        <!-- Logo wrapped in link to homepage -->
+        <a href="/index.html" class="flex items-center">
+          <img src="logo3.png" alt="Get More Jobs Logo" class="h-[4rem] w-auto p-1 drop-shadow-lg hover:opacity-90 transition" />
+        </a>
+      </div>
+      <nav class="flex flex-wrap gap-3 justify-center md:justify-end mt-4 md:mt-0">
+        <a href="/index.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Home</a>
+        <a href="/findContractors.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Find Contractors</a>
+        <a href="/about.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">About Us</a>
+        <a href="/faq.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">FAQ</a>
+        <a href="/resources.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Resources</a>
+        <button onclick="history.back()" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Back</button>
       </nav>
     </div>
   </header>
 
-  <!-- Hero / Intro -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 mt-8">
-    <div class="bg-white border rounded-2xl p-6 md:p-8 shadow-sm">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h1 class="text-2xl md:text-3xl font-bold">DailyDealzFinder <span class="text-indigo-600">(a GMJ brand)</span></h1>
-          <p class="mt-2 text-gray-600">Curated Amazon picks to save you time and money — updated <strong>weekly</strong>.</p>
-        </div>
-        <div class="text-sm bg-indigo-50 text-indigo-700 px-4 py-2 rounded-xl border border-indigo-100">
-          New drops every week • Bookmark this page
-        </div>
+  <!-- Hero -->
+  <section class="bg-gray-100 py-16 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-3">DailyDealzFinder</h1>
+      <p class="text-lg mb-6">Curated Amazon picks to save you time and money — <strong>updated weekly</strong>.</p>
+      <div class="inline-block bg-white border border-blue-200 text-blue-900 px-4 py-2 rounded-lg font-semibold">
+        New drops every week • Bookmark this page
       </div>
     </div>
   </section>
 
-  <!-- Optional category filters (non-functional placeholders you can wire later) -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 mt-6">
-    <div class="flex flex-wrap gap-2">
-      <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">All</button>
-      <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Tech</button>
-      <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Home</button>
-      <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Kitchen</button>
-      <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Lifestyle</button>
-      <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Fitness</button>
+  <!-- Optional Category Chips (non-functional placeholders) -->
+  <section class="py-6 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap gap-2">
+        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">All</button>
+        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Tech</button>
+        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Home</button>
+        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Kitchen</button>
+        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Lifestyle</button>
+        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Fitness</button>
+      </div>
     </div>
   </section>
 
   <!-- Deals Grid -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 mt-6 mb-16">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <!-- SAMPLE DEAL CARD #1 (ready for your real link & copy) -->
-      <article class="bg-white border rounded-2xl shadow-sm overflow-hidden flex flex-col">
-        <div class="aspect-w-16 aspect-h-9 bg-gray-100">
-          <!-- Replace with product image -->
-          <img src="/assets/placeholders/deal-1.jpg" alt="Product name" class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 flex flex-col flex-1">
-          <h3 class="font-semibold text-lg">[Product Name Here]</h3>
-          <p class="text-sm text-gray-600 mt-1 line-clamp-2">Short description or key benefit goes here. Keep it punchy and useful.</p>
+  <main class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">This Week’s Picks</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- READY-TO-EDIT DEAL CARD #1 -->
+        <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col">
+          <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
+            <!-- Replace with product image -->
+            <img src="/assets/placeholders/deal-1.jpg" alt="Product name" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-semibold">[Product Name Here]</h3>
+          <p class="text-gray-600 text-sm mt-1">Short description or key benefit goes here. Keep it punchy and useful.</p>
           <div class="mt-3 flex items-center justify-between">
             <span class="text-base font-semibold">$XX.XX</span>
-            <a href="#" class="text-indigo-600 hover:text-indigo-700 text-sm font-medium">View on Amazon →</a>
+            <a href="#" class="text-blue-900 font-semibold hover:underline">View on Amazon →</a>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- SAMPLE DEAL CARD #2 -->
-      <article class="bg-white border rounded-2xl shadow-sm overflow-hidden flex flex-col">
-        <div class="aspect-w-16 aspect-h-9 bg-gray-100">
-          <img src="/assets/placeholders/deal-2.jpg" alt="Product name" class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 flex flex-col flex-1">
-          <h3 class="font-semibold text-lg">[Product Name Here]</h3>
-          <p class="text-sm text-gray-600 mt-1 line-clamp-2">Add a quick reason to click. “Best budget option” or “viral must-have.”</p>
+        <!-- READY-TO-EDIT DEAL CARD #2 -->
+        <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col">
+          <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
+            <img src="/assets/placeholders/deal-2.jpg" alt="Product name" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-semibold">[Product Name Here]</h3>
+          <p class="text-gray-600 text-sm mt-1">Add a quick reason to click. “Best budget option” or “viral must-have.”</p>
           <div class="mt-3 flex items-center justify-between">
             <span class="text-base font-semibold">$XX.XX</span>
-            <a href="#" class="text-indigo-600 hover:text-indigo-700 text-sm font-medium">View on Amazon →</a>
+            <a href="#" class="text-blue-900 font-semibold hover:underline">View on Amazon →</a>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- SAMPLE DEAL CARD #3 -->
-      <article class="bg-white border rounded-2xl shadow-sm overflow-hidden flex flex-col">
-        <div class="aspect-w-16 aspect-h-9 bg-gray-100">
-          <img src="/assets/placeholders/deal-3.jpg" alt="Product name" class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 flex flex-col flex-1">
-          <h3 class="font-semibold text-lg">[Product Name Here]</h3>
-          <p class="text-sm text-gray-600 mt-1 line-clamp-2">One-liner value prop: faster, cheaper, easier, prettier, etc.</p>
+        <!-- READY-TO-EDIT DEAL CARD #3 -->
+        <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col">
+          <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
+            <img src="/assets/placeholders/deal-3.jpg" alt="Product name" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-semibold">[Product Name Here]</h3>
+          <p class="text-gray-600 text-sm mt-1">One-liner value prop: faster, cheaper, easier, prettier, etc.</p>
           <div class="mt-3 flex items-center justify-between">
             <span class="text-base font-semibold">$XX.XX</span>
-            <a href="#" class="text-indigo-600 hover:text-indigo-700 text-sm font-medium">View on Amazon →</a>
+            <a href="#" class="text-blue-900 font-semibold hover:underline">View on Amazon →</a>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- PLACEHOLDER / FILLER CARDS -->
-      <article class="bg-white border rounded-2xl shadow-sm p-6 flex items-center justify-center text-center min-h-[220px]">
-        <div>
-          <p class="font-semibold">New products coming soon</p>
-          <p class="text-gray-600 text-sm mt-1">Check back every week for fresh drops.</p>
-        </div>
-      </article>
+        <!-- PLACEHOLDERS -->
+        <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px]">
+          <div>
+            <p class="font-semibold">New products coming soon</p>
+            <p class="text-gray-600 text-sm mt-1">We update this list weekly.</p>
+          </div>
+        </article>
 
-      <article class="bg-white border rounded-2xl shadow-sm p-6 flex items-center justify-center text-center min-h-[220px]">
-        <div>
-          <p class="font-semibold">New products coming soon</p>
-          <p class="text-gray-600 text-sm mt-1">We update this list weekly.</p>
-        </div>
-      </article>
+        <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px]">
+          <div>
+            <p class="font-semibold">New products coming soon</p>
+            <p class="text-gray-600 text-sm mt-1">Bookmark this page for fresh drops.</p>
+          </div>
+        </article>
 
-      <article class="bg-white border rounded-2xl shadow-sm p-6 flex items-center justify-center text-center min-h-[220px]">
-        <div>
-          <p class="font-semibold">New products coming soon</p>
-          <p class="text-gray-600 text-sm mt-1">Bookmark this page.</p>
-        </div>
-      </article>
+        <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px]">
+          <div>
+            <p class="font-semibold">New products coming soon</p>
+            <p class="text-gray-600 text-sm mt-1">Check back next week!</p>
+          </div>
+        </article>
+      </div>
 
-    </div>
-
-    <!-- Disclosure + Update cadence -->
-    <div class="mt-10 text-sm text-gray-600">
-      <p><strong>Note:</strong> Some links may be affiliate links. We may earn a commission at no extra cost to you.</p>
-      <p class="mt-1">This list is <strong>updated weekly</strong>. Last updated: <span id="last-updated">—</span></p>
+      <!-- Disclosure + Update cadence -->
+      <div class="mt-10 text-sm text-gray-600 text-center">
+        <p><strong>Note:</strong> Some links are affiliate links. We may earn a commission at no extra cost to you.</p>
+        <p class="mt-1">This list is <strong>updated weekly</strong>. Last updated: <span id="last-updated">—</span></p>
+      </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="border-t bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 text-sm text-gray-600">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-        <span>© <span id="year"></span> Get More Jobs • DailyDealzFinder</span>
-        <a href="/index.html" class="text-indigo-600 hover:text-indigo-700">Back to Home →</a>
-      </div>
-    </div>
+  <footer class="bg-blue-900 text-white text-center p-4">
+    <p>&copy; <span id="year"></span> Get More Jobs • DailyDealzFinder. All rights reserved.</p>
   </footer>
 
   <!-- Tiny helper script for dates -->
   <script>
     (function () {
-      const y = document.getElementById('year');
+      var y = document.getElementById('year');
       if (y) y.textContent = new Date().getFullYear();
-      const lu = document.getElementById('last-updated');
+      var lu = document.getElementById('last-updated');
       if (lu) lu.textContent = new Date().toLocaleDateString();
     })();
-  </script>
-
-  <!-- Aspect ratio utility (for Tailwind v2) -->
-  <script>
-    // Simple aspect-ratio fallback for Tailwind v2 (16:9)
-    document.querySelectorAll('.aspect-w-16.aspect-h-9').forEach((box) => {
-      box.style.position = 'relative';
-      box.style.paddingTop = '56.25%';
-      const img = box.querySelector('img');
-      if (img) {
-        img.style.position = 'absolute';
-        img.style.top = '0';
-        img.style.left = '0';
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'cover';
-      }
-    });
   </script>
 </body>
 </html>
