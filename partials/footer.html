@@ -1,0 +1,29 @@
+<!-- /partials/footer.html -->
+<footer class="bg-blue-900 text-white px-6 py-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+
+    <!-- Copyright -->
+    <p class="text-sm">&copy; <span id="year"></span> Get More Jobs. All rights reserved.</p>
+
+    <!-- Social Links -->
+    <div class="flex gap-4">
+      <a href="https://www.instagram.com/getmorejobslv/" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="h-6 w-6 invert" />
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61578779608291" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" class="h-6 w-6 invert" />
+      </a>
+      <a href="https://www.youtube.com/@GetMoreJobsLV" target="_blank" aria-label="YouTube" class="hover:opacity-80 transition">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" class="h-6 w-6 invert" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Auto-update year in footer
+  document.addEventListener("DOMContentLoaded", () => {
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  });
+</script>
