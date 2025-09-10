@@ -4,56 +4,103 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Get More Jobs</title>
+
+  <!-- SEO -->
   <meta name="description" content="Homeowners and contractors — connect faster with trusted pros through Get More Jobs. Your local matchmaker for home services in Las Vegas.">
-  <link rel="icon" href="/favicon.png" type="image/png" /> <!-- ✅ Updated favicon -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KNDTWBK3QF');
+  </script>
 
-  gtag('config', 'G-KNDTWBK3QF');
-</script>
-
+  <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Get More Jobs",
-  "image": "https://getmorejobs.net/logo3.png",
-  "@id": "https://getmorejobs.net",
-  "url": "https://getmorejobs.net",
-  "telephone": "+1-725-502-5730",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Las Vegas",
-    "addressRegion": "NV",
-    "postalCode": "89101",
-    "addressCountry": "US"
-  },
-  "description": "Helping homeowners find trusted contractors and contractors get more jobs.",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-702-555-1234",
-    "contactType": "Customer Service"
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Get More Jobs",
+    "image": "https://getmorejobs.net/logo3.png",
+    "@id": "https://getmorejobs.net",
+    "url": "https://getmorejobs.net",
+    "telephone": "+1-725-502-5730",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Las Vegas",
+      "addressRegion": "NV",
+      "postalCode": "89101",
+      "addressCountry": "US"
+    },
+    "description": "Helping homeowners find trusted contractors and contractors get more jobs.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-702-555-1234",
+      "contactType": "Customer Service"
+    }
   }
-}
-</script>
+  </script>
 </head>
-<body class="bg-blue-900 text-white flex flex-col items-center justify-center min-h-screen text-center p-6">
+<body class="bg-white text-gray-800">
 
-  <img src="logo3.png" alt="Get More Jobs Logo" class="h-16 mb-8 drop-shadow-lg">
+  <!-- Header loaded via partial -->
+  <div id="site-header"></div>
 
-  <h1 class="text-2xl md:text-3xl font-bold mb-8 whitespace-nowrap">
-    Are you a Homeowner or Contractor?
-  </h1>
+  <!-- Hero Splash -->
+  <section class="bg-blue-900 text-white">
+    <div class="max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
+      <img src="logo3.png" alt="Get More Jobs Logo" class="h-16 md:h-20 mb-8 drop-shadow-lg" />
+      <h1 class="text-2xl md:text-3xl font-bold mb-8">Are you a Homeowner or Contractor?</h1>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="homeowners.html" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">Homeowner</a>
+        <a href="contractors.html" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">Contractor</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="space-x-4">
-    <button onclick="location.href='homeowners.html'" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">Homeowner</button>
-    <button onclick="location.href='contractors.html'" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">Contractor</button>
-  </div>
+  <!-- Footer loaded via partial -->
+  <div id="site-footer"></div>
 
+  <!-- Partials Loader + Active Nav -->
+  <script>
+    async function includePartial(selector, url, callback) {
+      const host = document.querySelector(selector);
+      if (!host) return;
+      try {
+        const res = await fetch(url, { credentials: 'same-origin' });
+        if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
+        host.innerHTML = await res.text();
+        if (callback) callback();
+      } catch (err) {
+        console.error(err);
+        host.innerHTML = '<div style="padding:8px;background:#fee;color:#900;border:1px solid #f99;border-radius:8px">Failed to load partial.</div>';
+      }
+    }
+
+    function highlightActiveNav() {
+      const path = window.location.pathname.toLowerCase();
+      document.querySelectorAll('#site-header .nav-link').forEach(link => {
+        const href = link.getAttribute('href').toLowerCase();
+        const isActive =
+          path.endsWith(href) ||
+          (href === '/index.html' && (path === '/' || path.endsWith('/index.html')));
+        if (isActive) {
+          link.classList.remove('bg-white', 'text-blue-900', 'hover:bg-blue-100');
+          link.classList.add('bg-blue-700', 'text-white');
+        }
+      });
+    }
+
+    includePartial('#site-header', '/partials/header.html', highlightActiveNav);
+    includePartial('#site-footer', '/partials/footer.html');
+  </script>
 </body>
 </html>
