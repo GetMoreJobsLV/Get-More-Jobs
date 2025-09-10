@@ -48,7 +48,7 @@
     </div>
   </section>
 
-  <!-- Optional Category Chips (non-functional placeholders) -->
+  <!-- Optional Category Chips -->
   <section class="py-6 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex flex-wrap gap-2">
@@ -68,10 +68,9 @@
       <h2 class="text-3xl font-bold text-center mb-8">This Week’s Picks</h2>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- READY-TO-EDIT DEAL CARD #1 -->
+        <!-- Example Deal Cards -->
         <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col">
           <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
-            <!-- Replace with product image -->
             <img src="/assets/placeholders/deal-1.jpg" alt="Product name" class="w-full h-full object-cover">
           </div>
           <h3 class="text-xl font-semibold">[Product Name Here]</h3>
@@ -82,7 +81,6 @@
           </div>
         </article>
 
-        <!-- READY-TO-EDIT DEAL CARD #2 -->
         <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col">
           <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
             <img src="/assets/placeholders/deal-2.jpg" alt="Product name" class="w-full h-full object-cover">
@@ -95,7 +93,6 @@
           </div>
         </article>
 
-        <!-- READY-TO-EDIT DEAL CARD #3 -->
         <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col">
           <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
             <img src="/assets/placeholders/deal-3.jpg" alt="Product name" class="w-full h-full object-cover">
@@ -108,7 +105,7 @@
           </div>
         </article>
 
-        <!-- PLACEHOLDERS -->
+        <!-- Placeholder Cards -->
         <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px]">
           <div>
             <p class="font-semibold">New products coming soon</p>
@@ -131,7 +128,7 @@
         </article>
       </div>
 
-      <!-- Disclosure + Update cadence -->
+      <!-- Disclosure -->
       <div class="mt-10 text-sm text-gray-600 text-center">
         <p><strong>Note:</strong> Some links are affiliate links. We may earn a commission at no extra cost to you.</p>
         <p class="mt-1">This list is <strong>updated weekly</strong>. Last updated: <span id="last-updated">—</span></p>
@@ -139,31 +136,33 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center p-4">
-    <p>&copy; <span id="year"></span> Get More Jobs • DailyDealzFinder. All rights reserved.</p>
-  </footer>
+  <!-- Footer loaded via partial -->
+  <div id="site-footer"></div>
 
-  <!-- Tiny helper script for dates + header partial loader with active-link highlight -->
+  <!-- Scripts -->
   <script>
+    // Dates
     (function () {
-      var y = document.getElementById('year');
+      const y = document.getElementById('year');
       if (y) y.textContent = new Date().getFullYear();
-      var lu = document.getElementById('last-updated');
+      const lu = document.getElementById('last-updated');
       if (lu) lu.textContent = new Date().toLocaleDateString();
     })();
 
-    async function includePartial(selector, url) {
+    // Load partials (header + footer) and highlight active nav
+    async function includePartial(selector, url, callback) {
       const host = document.querySelector(selector);
       if (!host) return;
       try {
         const res = await fetch(url, { credentials: 'same-origin' });
         if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
         host.innerHTML = await res.text();
-        highlightActiveNav();
+        if (callback) callback();
       } catch (err) {
         console.error(err);
-        host.innerHTML = '<div style="padding:8px;background:#fee;color:#900;border:1px solid #f99;border-radius:8px">Header failed to load.</div>';
+        host.innerHTML = `<div style="padding:8px;background:#fee;color:#900">
+          Failed to load ${url}.
+        </div>`;
       }
     }
 
@@ -171,12 +170,9 @@
       const path = window.location.pathname.toLowerCase();
       document.querySelectorAll('#site-header .nav-link').forEach(link => {
         const href = link.getAttribute('href').toLowerCase();
-
-        // Match exact page or homepage
         const isActive =
           path.endsWith(href) ||
           (href === '/index.html' && (path === '/' || path.endsWith('/index.html')));
-
         if (isActive) {
           link.classList.remove('bg-white', 'text-blue-900', 'hover:bg-blue-100');
           link.classList.add('bg-blue-700', 'text-white');
@@ -184,7 +180,8 @@
       });
     }
 
-    includePartial('#site-header', '/partials/header.html');
+    includePartial('#site-header', '/partials/header.html', highlightActiveNav);
+    includePartial('#site-footer', '/partials/footer.html');
   </script>
 </body>
 </html>
