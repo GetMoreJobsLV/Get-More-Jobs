@@ -51,9 +51,6 @@
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Header loaded via partial -->
-  <div id="site-header"></div>
-
   <!-- Hero Splash -->
   <section class="bg-blue-900 text-white">
     <div class="max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
@@ -69,37 +66,21 @@
   <!-- Footer loaded via partial -->
   <div id="site-footer"></div>
 
-  <!-- Partials Loader + Active Nav -->
+  <!-- Load Footer -->
   <script>
-    async function includePartial(selector, url, callback) {
+    async function includePartial(selector, url) {
       const host = document.querySelector(selector);
       if (!host) return;
       try {
         const res = await fetch(url, { credentials: 'same-origin' });
         if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
         host.innerHTML = await res.text();
-        if (callback) callback();
       } catch (err) {
         console.error(err);
-        host.innerHTML = '<div style="padding:8px;background:#fee;color:#900;border:1px solid #f99;border-radius:8px">Failed to load partial.</div>';
+        host.innerHTML = '<div style="padding:8px;background:#fee;color:#900;border:1px solid #f99;border-radius:8px">Failed to load footer.</div>';
       }
     }
 
-    function highlightActiveNav() {
-      const path = window.location.pathname.toLowerCase();
-      document.querySelectorAll('#site-header .nav-link').forEach(link => {
-        const href = link.getAttribute('href').toLowerCase();
-        const isActive =
-          path.endsWith(href) ||
-          (href === '/index.html' && (path === '/' || path.endsWith('/index.html')));
-        if (isActive) {
-          link.classList.remove('bg-white', 'text-blue-900', 'hover:bg-blue-100');
-          link.classList.add('bg-blue-700', 'text-white');
-        }
-      });
-    }
-
-    includePartial('#site-header', '/partials/header.html', highlightActiveNav);
     includePartial('#site-footer', '/partials/footer.html');
   </script>
 </body>
