@@ -4,17 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Get More Jobs – For Homeowners</title>
-  <link rel="icon" href="/favicon.png" type="image/png" /> <!-- ✅ Updated favicon -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-KNDTWBK3QF');
-</script>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KNDTWBK3QF');
+  </script>
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Find trusted, reliable contractors near you. Get More Jobs connects homeowners with verified professionals.">
@@ -33,23 +37,8 @@
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Header -->
- <header class="bg-blue-900 text-white px-6 py-4">
-  <div class="max-w-6xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
-    <div class="flex items-center">
-      <a href="/index.html">
-        <img src="logo3.png" alt="Get More Jobs Logo" class="h-[4rem] w-auto p-1 drop-shadow-lg hover:opacity-90 transition" />
-      </a>
-    </div>
-    <nav class="flex flex-wrap gap-3 justify-center md:justify-end mt-4 md:mt-0">
-      <a href="/findContractors.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Find Contractors</a>
-      <a href="/about.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">About Us</a>
-      <a href="/faq.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">FAQ</a>
-      <a href="/resources.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Resources</a>
-      <a href="#contact" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- Header (loaded via partial include) -->
+  <div id="site-header"></div>
 
   <!-- Hero Section -->
   <section class="bg-gray-100 py-20 text-center">
@@ -103,5 +92,22 @@
   <footer class="bg-blue-900 text-white text-center p-4">
     <p>&copy; 2025 Get More Jobs. All rights reserved.</p>
   </footer>
+
+  <!-- Partial Loader Script -->
+  <script>
+    async function includePartial(selector, url) {
+      const host = document.querySelector(selector);
+      if (!host) return;
+      try {
+        const res = await fetch(url, { credentials: 'same-origin' });
+        if (!res.ok) throw new Error(`Failed to load ${url}`);
+        host.innerHTML = await res.text();
+      } catch (err) {
+        console.error(err);
+        host.innerHTML = '<div style="padding:8px;background:#fee;color:#900">Header failed to load.</div>';
+      }
+    }
+    includePartial('#site-header', '/partials/header.html');
+  </script>
 </body>
 </html>
