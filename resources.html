@@ -5,8 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resources | Get More Jobs</title>
+
+  <!-- Favicon -->
   <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
   <script>
@@ -17,29 +22,14 @@
   </script>
 </head>
 <body class="bg-white text-gray-800">
-  <header class="bg-blue-900 text-white px-6 py-4">
-    <div class="max-w-6xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
-      <div class="flex items-center">
-        <a href="/index.html">
-          <img src="logo3.png" alt="Get More Jobs Logo" class="h-[4rem] w-auto p-1 drop-shadow-lg hover:opacity-90 transition">
-        </a>
-      </div>
-      <nav class="flex flex-wrap gap-3 justify-center md:justify-end mt-4 md:mt-0">
-        <a href="/about.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">About Us</a>
-        <a href="/faq.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">FAQ</a>
-        <a href="/resources.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Resources</a>
-        <a href="/contractors.html#services" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Services</a>
-        <a href="/contractors.html#contact" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Contact</a>
-      </nav>
-    </div>
-  </header>
+
+  <!-- Header loaded via partial -->
+  <div id="site-header"></div>
 
   <main class="max-w-4xl mx-auto px-6 py-12">
     <h1 class="text-3xl font-bold mb-4">Helpful Resources</h1>
 
-    </ul>
-
-    <!-- New Article Card -->
+    <!-- Article Card -->
     <a href="/SWvsBEHR.html" class="block border border-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
       <img src="SherwinVSBehr.png" alt="Sherwin Williams vs BEHR Paint" class="w-full h-48 object-cover">
       <div class="p-6">
@@ -47,7 +37,46 @@
         <p class="text-gray-700">We break down the key differences in coverage, application, and overall value to help you make an informed decision.</p>
       </div>
     </a>
-
   </main>
+
+  <!-- Footer loaded via partial -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script>
+    // Load partials (header + footer) and highlight active nav
+    async function includePartial(selector, url, callback) {
+      const host = document.querySelector(selector);
+      if (!host) return;
+      try {
+        const res = await fetch(url, { credentials: 'same-origin' });
+        if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
+        host.innerHTML = await res.text();
+        if (callback) callback();
+      } catch (err) {
+        console.error(err);
+        host.innerHTML = `<div style="padding:8px;background:#fee;color:#900">
+          Failed to load ${url}.
+        </div>`;
+      }
+    }
+
+    function highlightActiveNav() {
+      const path = window.location.pathname.toLowerCase();
+      document.querySelectorAll('#site-header .nav-link').forEach(link => {
+        const href = link.getAttribute('href').toLowerCase();
+        const isActive =
+          path.endsWith(href) ||
+          (href === '/index.html' && (path === '/' || path.endsWith('/index.html')));
+        if (isActive) {
+          link.classList.remove('bg-white', 'text-blue-900', 'hover:bg-blue-100');
+          link.classList.add('bg-blue-700', 'text-white');
+        }
+      });
+    }
+
+    includePartial('#site-header', '/partials/header.html', highlightActiveNav);
+    includePartial('#site-footer', '/partials/footer.html');
+  </script>
 </body>
 </html>
