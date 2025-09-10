@@ -4,8 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Whose Paint do I use? Sherwin-Williams vs. Behr</title>
+
+  <!-- Favicon -->
   <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,32 +21,73 @@
   </script>
 </head>
 <body class="bg-white text-gray-800">
-  <header class="bg-blue-900 text-white px-6 py-4">
-    <div class="max-w-6xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
-      <a href="/index.html">
-        <img src="logo3.png" alt="Get More Jobs Logo" class="h-[4rem] w-auto p-1 drop-shadow-lg hover:opacity-90 transition">
-      </a>
-      <nav class="flex flex-wrap gap-3 justify-center md:justify-end mt-4 md:mt-0">
-        <a href="/about.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">About Us</a>
-        <a href="/faq.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">FAQ</a>
-        <a href="/resources.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Resources</a>
-        <a href="/contractors.html#services" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Services</a>
-        <a href="/contractors.html#contact" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Contact</a>
-      </nav>
-    </div>
-  </header>
+
+  <!-- Header loaded via partial -->
+  <div id="site-header"></div>
+
+  <!-- Main Content -->
   <main class="max-w-4xl mx-auto px-6 py-12">
     <h1 class="text-3xl font-bold mb-6">Comparing Homeowner Paints: Sherwin-Williams vs. Behr</h1>
+
     <p class="mb-4">Choosing paint as a homeowner can be a tough decision, especially with two of the most popular brands—Behr and Sherwin-Williams—offering a range of options tailored for residential projects. Whether you're tackling a single room refresh or repainting your entire home, your choice in paint can affect everything from how long the finish lasts to how smoothly the job goes.</p>
+
     <p class="mb-4">Let’s first look at what each brand generally offers:</p>
+
     <p class="mb-4"><strong>Behr (sold at Home Depot):</strong> Known for being widely accessible and DIY-friendly, Behr offers budget-conscious homeowners a variety of lines from economy to premium. Many of its products, like Behr Premium Plus and Behr Marquee, promote one-coat coverage and low VOCs, making them appealing for quick, easy projects. However, Behr often requires careful surface prep and multiple coats for consistent results—especially in high-traffic areas. The paints are generally thick, which can be both a pro and a con; while coverage may be good in ideal conditions, it may also lead to roller marks or uneven finishes if not applied with care. Durability varies by line, with touch-ups often appearing visible over time.</p>
+
     <p class="mb-4"><strong>Sherwin-Williams:</strong> Though typically priced higher than retail store brands, Sherwin-Williams paints are valued for their rich pigmentation, smooth application, and long-term durability. Even mid-tier lines are known for holding up well under wear and tear, often requiring fewer coats and offering better washability over time. Their consistency across product lines makes planning a project easier, especially when working with multiple finishes like flat, satin, or semi-gloss. Staff are also trained specifically in coatings, offering guidance on specialty surfaces, primers, and finish matching that can save time and cost in the long run.</p>
+
     <p class="mb-4">When comparing mid-tier products, one standout is SuperPaint—a favorite among homeowners and pros alike for its versatility. It delivers a noticeable step up from entry-level options in both coverage and ease of application. SuperPaint strikes a balance between affordability and performance, outperforming many retail store competitors in terms of longevity and resistance to stains and fading. It works well on drywall, wood, and masonry, making it a great all-around choice. In contrast, Behr Premium Plus Ultra aims to compete in this tier, but users often report the need for more coats to get similar depth of color, and touch-ups may not blend as easily.</p>
+
     <p class="mb-4">Trim and cabinetry present another layer of consideration. Sherwin-Williams offers Emerald Urethane Trim Enamel—a highly durable, self-leveling formula that's resistant to fingerprints, smudges, and cleaning wear. It provides a smooth, professional-looking finish that dries to a hard, furniture-like coating. This makes it a go-to for baseboards, doors, and cabinetry. While Behr does offer trim enamels, reviews are mixed when it comes to leveling and long-term hardness. For homeowners wanting a crisp, lasting finish on trim work, the investment in a higher-end product like Emerald Urethane can pay off.</p>
+
     <p class="mb-4">Another point often raised by Behr customers involves the actual purchasing experience. Multiple users have reported that obtaining paint from Home Depot can be frustrating due to disorganization. As Home Depot serves many purposes beyond paint, the process can involve longer wait times and confusion, especially when staff are not as specialized in paint-related knowledge.</p>
+
     <p class="mb-4">Sherwin-Williams also stands out when it comes to accessibility—especially in the Las Vegas area. With numerous dedicated locations across the city and surrounding suburbs, it’s easy for homeowners or contractors to find a store nearby, get help from knowledgeable staff, and access specialty products without delay. Having quick and reliable access to matching paints or additional supplies can make a significant difference during a time-sensitive project.</p>
+
     <p class="mb-4">Beyond the paint itself, the buying experience is worth noting. Specialty paint stores often offer deeper product knowledge and better service. Staff are typically more familiar with nuances in finish, adhesion, and surface compatibility, and can guide homeowners through more technical decisions. This added support can be especially helpful when working with specialty surfaces or tackling a more ambitious renovation.</p>
+
     <p class="mb-8">If you're still unsure which paint suits your needs or want to ensure you're making the right investment, we encourage you to <a href="/contractors.html#contact" class="text-blue-700 underline hover:text-blue-900">get in touch with a local painter</a>. A professional can help ensure your home gets the perfect finish, using the best tools and materials for the job.</p>
   </main>
+
+  <!-- Footer loaded via partial -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script>
+    // Load partials (header + footer) and highlight active nav
+    async function includePartial(selector, url, callback) {
+      const host = document.querySelector(selector);
+      if (!host) return;
+      try {
+        const res = await fetch(url, { credentials: 'same-origin' });
+        if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
+        host.innerHTML = await res.text();
+        if (callback) callback();
+      } catch (err) {
+        console.error(err);
+        host.innerHTML = `<div style="padding:8px;background:#fee;color:#900">
+          Failed to load ${url}.
+        </div>`;
+      }
+    }
+
+    function highlightActiveNav() {
+      const path = window.location.pathname.toLowerCase();
+      document.querySelectorAll('#site-header .nav-link').forEach(link => {
+        const href = link.getAttribute('href').toLowerCase();
+        const isActive =
+          path.endsWith(href) ||
+          (href === '/index.html' && (path === '/' || path.endsWith('/index.html')));
+        if (isActive) {
+          link.classList.remove('bg-white', 'text-blue-900', 'hover:bg-blue-100');
+          link.classList.add('bg-blue-700', 'text-white');
+        }
+      });
+    }
+
+    includePartial('#site-header', '/partials/header.html', highlightActiveNav);
+    includePartial('#site-footer', '/partials/footer.html');
+  </script>
 </body>
 </html>
