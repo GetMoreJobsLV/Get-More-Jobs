@@ -32,12 +32,12 @@
   <meta property="og:url" content="https://yourdomain.com/homeowners.html" />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon -->
+  <!-- Favicon (ICO fallback) -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Header (loaded via partial include) -->
+  <!-- Header loaded via partial -->
   <div id="site-header"></div>
 
   <!-- Hero Section -->
@@ -88,26 +88,41 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center p-4">
-    <p>&copy; 2025 Get More Jobs. All rights reserved.</p>
-  </footer>
+  <!-- Footer loaded via partial -->
+  <div id="site-footer"></div>
 
-  <!-- Partial Loader Script -->
+  <!-- Partials Loader + Active Nav -->
   <script>
-    async function includePartial(selector, url) {
+    async function includePartial(selector, url, callback) {
       const host = document.querySelector(selector);
       if (!host) return;
       try {
         const res = await fetch(url, { credentials: 'same-origin' });
-        if (!res.ok) throw new Error(`Failed to load ${url}`);
+        if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
         host.innerHTML = await res.text();
+        if (callback) callback();
       } catch (err) {
         console.error(err);
-        host.innerHTML = '<div style="padding:8px;background:#fee;color:#900">Header failed to load.</div>';
+        host.innerHTML = '<div style="padding:8px;background:#fee;color:#900;border:1px solid #f99;border-radius:8px">Failed to load partial.</div>';
       }
     }
-    includePartial('#site-header', '/partials/header.html');
+
+    function highlightActiveNav() {
+      const path = window.location.pathname.toLowerCase();
+      document.querySelectorAll('#site-header .nav-link').forEach(link => {
+        const href = link.getAttribute('href').toLowerCase();
+        const isActive =
+          path.endsWith(href) ||
+          (href === '/index.html' && (path === '/' || path.endsWith('/index.html')));
+        if (isActive) {
+          link.classList.remove('bg-white', 'text-blue-900', 'hover:bg-blue-100');
+          link.classList.add('bg-blue-700', 'text-white');
+        }
+      });
+    }
+
+    includePartial('#site-header', '/partials/header.html', highlightActiveNav);
+    includePartial('#site-footer', '/partials/footer.html');
   </script>
 </body>
 </html>
