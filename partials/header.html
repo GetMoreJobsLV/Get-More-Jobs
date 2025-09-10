@@ -8,13 +8,26 @@
       </a>
     </div>
     <nav class="flex flex-wrap gap-3 justify-center md:justify-end mt-4 md:mt-0">
-      <a href="/index.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Home</a>
-      <a href="/findContractors.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Find Contractors</a>
-      <a href="/about.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">About Us</a>
-      <a href="/faq.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">FAQ</a>
-      <a href="/resources.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Resources</a>
-      <a href="/DailyDealz.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">DailyDealz</a>
+      <a href="/index.html" class="nav-link bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Home</a>
+      <a href="/findContractors.html" class="nav-link bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Find Contractors</a>
+      <a href="/about.html" class="nav-link bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">About Us</a>
+      <a href="/faq.html" class="nav-link bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">FAQ</a>
+      <a href="/resources.html" class="nav-link bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Resources</a>
+      <a href="/DailyDealz.html" class="nav-link bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">DailyDealz</a>
       <button onclick="history.back()" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Back</button>
     </nav>
   </div>
 </header>
+
+<script>
+  // Highlight the active link based on current URL
+  document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname.toLowerCase();
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (path.endsWith(link.getAttribute("href").toLowerCase())) {
+        link.classList.remove("bg-white", "text-blue-900", "hover:bg-blue-100");
+        link.classList.add("bg-blue-700", "text-white");
+      }
+    });
+  });
+</script>
