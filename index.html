@@ -1,11 +1,17 @@
-<!-- resources.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resources | Get More Jobs</title>
+  <title>Get More Jobs</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Homeowners and contractors — connect faster with trusted pros through Get More Jobs. Your local matchmaker for home services in Las Vegas.">
+
+  <!-- Favicon -->
   <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
@@ -16,40 +22,46 @@
     gtag('js', new Date());
     gtag('config', 'G-KNDTWBK3QF');
   </script>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Get More Jobs",
+    "image": "https://getmorejobs.net/logo3.png",
+    "@id": "https://getmorejobs.net",
+    "url": "https://getmorejobs.net",
+    "telephone": "+1-725-502-5730",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Las Vegas",
+      "addressRegion": "NV",
+      "postalCode": "89101",
+      "addressCountry": "US"
+    },
+    "description": "Helping homeowners find trusted contractors and contractors get more jobs.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-702-555-1234",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
 </head>
 <body class="bg-white text-gray-800">
 
-  <header class="bg-blue-900 text-white px-6 py-4">
-    <div class="max-w-6xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
-      <div class="flex items-center">
-        <a href="/index.html">
-          <img src="logo3.png" alt="Get More Jobs Logo" class="h-[4rem] w-auto p-1 drop-shadow-lg hover:opacity-90 transition">
-        </a>
+  <!-- Hero Splash -->
+  <section class="bg-blue-900 text-white">
+    <div class="max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
+      <img src="logo3.png" alt="Get More Jobs Logo" class="h-16 md:h-20 mb-8 drop-shadow-lg" />
+      <h1 class="text-2xl md:text-3xl font-bold mb-8">Are you a Homeowner or Contractor?</h1>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="homeowners.html" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">Homeowner</a>
+        <a href="contractors.html" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">Contractor</a>
       </div>
-      <nav class="flex flex-wrap gap-3 justify-center md:justify-end mt-4 md:mt-0">
-        <a href="/about.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">About Us</a>
-        <a href="/faq.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">FAQ</a>
-        <a href="/resources.html" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Resources</a>
-        <a href="/contractors.html#services" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Services</a>
-        <a href="/contractors.html#contact" class="bg-white text-blue-900 px-3 py-1 rounded-md font-semibold hover:bg-blue-100 transition">Contact</a>
-      </nav>
     </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-6 py-12">
-    <h1 class="text-3xl font-bold mb-4">Helpful Resources</h1>
-
-    </ul>
-
-    <!-- New Article Card -->
-    <a href="/SWvsBEHR.html" class="block border border-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-      <img src="SherwinVSBehr.png" alt="Sherwin Williams vs BEHR Paint" class="w-full h-48 object-cover">
-      <div class="p-6">
-        <h2 class="text-2xl font-semibold mb-2 text-blue-900">Whose Paint do I use? Sherwin Williams VS BEHR</h2>
-        <p class="text-gray-700">We break down the key differences in coverage, application, and overall value to help you make an informed decision.</p>
-      </div>
-    </a>
-  </main>
+  </section>
 
 </body>
 </html>
