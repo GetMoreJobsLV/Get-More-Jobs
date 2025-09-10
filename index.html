@@ -63,25 +63,5 @@
     </div>
   </section>
 
-  <!-- Footer loaded via partial -->
-  <div id="site-footer"></div>
-
-  <!-- Load Footer -->
-  <script>
-    async function includePartial(selector, url) {
-      const host = document.querySelector(selector);
-      if (!host) return;
-      try {
-        const res = await fetch(url, { credentials: 'same-origin' });
-        if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
-        host.innerHTML = await res.text();
-      } catch (err) {
-        console.error(err);
-        host.innerHTML = '<div style="padding:8px;background:#fee;color:#900;border:1px solid #f99;border-radius:8px">Failed to load footer.</div>';
-      }
-    }
-
-    includePartial('#site-footer', '/partials/footer.html');
-  </script>
 </body>
 </html>
