@@ -50,10 +50,15 @@
   <section class="bg-gray-100 py-16 text-center">
     <div class="max-w-3xl mx-auto px-6">
       <h1 class="text-4xl font-extrabold mb-3 tracking-tight">DailyDealzFinder</h1>
-      <p class="text-lg mb-6">Curated Amazon picks to save you time and money — <strong>updated weekly</strong>.</p>
+      <p class="text-lg mb-6">
+        Curated Amazon picks to save you time and money — <strong>updated weekly</strong>.
+      </p>
       <div class="inline-block bg-white border px-4 py-2 rounded-lg font-semibold"
            style="border-color: rgba(216,100,0,0.3); color: var(--ddf-orange);">
         New drops every week • Bookmark this page
+      </div>
+      <div class="mt-3 text-sm text-gray-600">
+        Last updated: <span id="last-updated">—</span>
       </div>
     </div>
   </section>
@@ -77,7 +82,6 @@
       <!-- Disclosure -->
       <div class="mt-10 text-sm text-gray-600 text-center">
         <p><strong>Note:</strong> Some links are affiliate links. We may earn a commission at no extra cost to you.</p>
-        <p class="mt-1">This list is <strong>updated weekly</strong>. Last updated: <span id="last-updated">—</span></p>
       </div>
     </div>
   </main>
@@ -92,6 +96,15 @@
        -------------------------- */
     const deals = [
       {
+        title: "Beats Earbuds",
+        desc: "Crisp sound, comfy fit — grab it while it’s discounted.",
+        price: 99.99, 
+        wasPrice: 169.95,
+        img: "beatsearbuds.jpg",
+        href: "https://amzn.to/3JWmDFg",
+        category: "Tech"
+      },
+      {
         title: "Fan Cleaner Tool",
         desc: "Easily clean ceiling fan blades — no mess, quick results.",
         price: 24.99,
@@ -105,8 +118,8 @@
         desc: "Solid sound and battery life without breaking the bank.",
         price: 19.99,
         wasPrice: 29.99,
-        img: "/assets/deals/earbuds.jpg",     // add this file or replace path
-        href: "https://amzn.to/3VPrkTP",      // replace with product link
+        img: "/assets/deals/earbuds.jpg",
+        href: "https://amzn.to/3VPrkTP",
         category: "Tech"
       },
       {
@@ -114,7 +127,7 @@
         desc: "Even heating and easy cleanup — everyday kitchen essential.",
         price: 39.99,
         wasPrice: 59.99,
-        img: "/assets/deals/pans.jpg",        // add this file or replace path
+        img: "/assets/deals/pans.jpg",
         href: "https://amzn.to/3VPrkTP",
         category: "Kitchen"
       }
