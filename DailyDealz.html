@@ -31,6 +31,11 @@
   <meta property="og:image" content="https://yourdomain.com/images/logo2.png" />
   <meta property="og:url" content="https://yourdomain.com/dailydealzfinder.html" />
   <meta property="og:type" content="website" />
+
+  <style>
+    /* Brand accent (dark orange) */
+    :root { --ddf-orange:#d86400; }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
 
@@ -42,23 +47,17 @@
     <div class="max-w-3xl mx-auto px-6">
       <h1 class="text-4xl font-bold mb-3">DailyDealzFinder</h1>
       <p class="text-lg mb-6">Curated Amazon picks to save you time and money — <strong>updated weekly</strong>.</p>
-      <div class="inline-block bg-white border border-blue-200 text-blue-900 px-4 py-2 rounded-lg font-semibold">
+      <div class="inline-block bg-white border border-orange-200 text-orange-900 px-4 py-2 rounded-lg font-semibold"
+           style="--tw-border-opacity:1;border-color:rgba(216,100,0,0.3);color:var(--ddf-orange)">
         New drops every week • Bookmark this page
       </div>
     </div>
   </section>
 
-  <!-- Optional Category Chips -->
+  <!-- Category Chips -->
   <section class="py-6 bg-white">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-wrap gap-2">
-        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">All</button>
-        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Tech</button>
-        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Home</button>
-        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Kitchen</button>
-        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Lifestyle</button>
-        <button class="px-4 py-2 text-sm rounded-full border bg-white hover:bg-gray-50">Fitness</button>
-      </div>
+      <div id="category-chips" class="flex flex-wrap gap-2"></div>
     </div>
   </section>
 
@@ -67,65 +66,8 @@
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-8">This Week’s Picks</h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Example Deal Cards -->
-        <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col">
-          <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
-            <img src="/assets/placeholders/deal-1.jpg" alt="Product name" class="w-full h-full object-cover">
-          </div>
-          <h3 class="text-xl font-semibold">[Product Name Here]</h3>
-          <p class="text-gray-600 text-sm mt-1">Short description or key benefit goes here. Keep it punchy and useful.</p>
-          <div class="mt-3 flex items-center justify-between">
-            <span class="text-base font-semibold">$XX.XX</span>
-            <a href="#" class="text-blue-900 font-semibold hover:underline">View on Amazon →</a>
-          </div>
-        </article>
-
-        <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col">
-          <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
-            <img src="/assets/placeholders/deal-2.jpg" alt="Product name" class="w-full h-full object-cover">
-          </div>
-          <h3 class="text-xl font-semibold">[Product Name Here]</h3>
-          <p class="text-gray-600 text-sm mt-1">Add a quick reason to click. “Best budget option” or “viral must-have.”</p>
-          <div class="mt-3 flex items-center justify-between">
-            <span class="text-base font-semibold">$XX.XX</span>
-            <a href="#" class="text-blue-900 font-semibold hover:underline">View on Amazon →</a>
-          </div>
-        </article>
-
-        <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col">
-          <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
-            <img src="/assets/placeholders/deal-3.jpg" alt="Product name" class="w-full h-full object-cover">
-          </div>
-          <h3 class="text-xl font-semibold">[Product Name Here]</h3>
-          <p class="text-gray-600 text-sm mt-1">One-liner value prop: faster, cheaper, easier, prettier, etc.</p>
-          <div class="mt-3 flex items-center justify-between">
-            <span class="text-base font-semibold">$XX.XX</span>
-            <a href="#" class="text-blue-900 font-semibold hover:underline">View on Amazon →</a>
-          </div>
-        </article>
-
-        <!-- Placeholder Cards -->
-        <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px]">
-          <div>
-            <p class="font-semibold">New products coming soon</p>
-            <p class="text-gray-600 text-sm mt-1">We update this list weekly.</p>
-          </div>
-        </article>
-
-        <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px]">
-          <div>
-            <p class="font-semibold">New products coming soon</p>
-            <p class="text-gray-600 text-sm mt-1">Bookmark this page for fresh drops.</p>
-          </div>
-        </article>
-
-        <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px]">
-          <div>
-            <p class="font-semibold">New products coming soon</p>
-            <p class="text-gray-600 text-sm mt-1">Check back next week!</p>
-          </div>
-        </article>
+      <div id="deals-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- JS will render cards here -->
       </div>
 
       <!-- Disclosure -->
@@ -140,16 +82,134 @@
   <div id="site-footer"></div>
 
   <!-- Scripts -->
-  <script>
-    // Dates
+ <script>
+  // ---------- DATA: Edit this to update your page ----------
+  const deals = [
+    {
+      title: "Fan Cleaner Tool",
+      desc: "Easily clean ceiling fan blades — no mess, quick results.",
+      price: 24.99,        // change if you want
+      wasPrice: 32.99,     // optional: remove if not needed
+      img: "/assets/deals/fancleaner.jpg",   // 👈 your repo image
+      href: "https://amzn.to/3VPrkTP",       // 👈 your affiliate link
+      category: "Home"
+    }
+    // ,{ ...more deals here... }
+  ];
+</script>
+// ADD MORE HERE!!!!!
+
+      },
+      // Add more items here...
+      // {
+      //   title: "Nonstick Pan Set",
+      //   desc: "Easy cleanup, even heat — everyday essential.",
+      //   price: 39.99,
+      //   wasPrice: 59.99,
+      //   img: "/assets/placeholders/deal-2.jpg",
+      //   href: "https://amzn.to/xxxxxxx",
+      //   category: "Kitchen"
+      // },
+    ];
+
+    // Categories you want to show as chips; include "All"
+    const categories = ["All", "Tech", "Home", "Kitchen", "Lifestyle", "Fitness"];
+
+    // ---------- UTILITIES ----------
+    const fmt = (n) => (typeof n === "number" ? `$${n.toFixed(2)}` : "");
+
+    function discountPercent(now, was) {
+      if (typeof now !== "number" || typeof was !== "number" || was <= now) return null;
+      return Math.round(((was - now) / was) * 100);
+    }
+
+    // ---------- RENDER CATEGORY CHIPS ----------
+    const chipsHost = document.getElementById("category-chips");
+    let activeCategory = "All";
+
+    function renderChips() {
+      chipsHost.innerHTML = "";
+      categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.textContent = cat;
+        const isActive = cat === activeCategory;
+        btn.className =
+          "px-4 py-2 text-sm rounded-full border " +
+          (isActive
+            ? "text-white"
+            : "bg-white hover:bg-gray-50 text-gray-800") +
+          " transition";
+        if (isActive) {
+          btn.style.backgroundColor = "var(--ddf-orange)";
+          btn.style.borderColor = "var(--ddf-orange)";
+        }
+        btn.addEventListener("click", () => {
+          activeCategory = cat;
+          renderChips();
+          renderDeals();
+        });
+        chipsHost.appendChild(btn);
+      });
+    }
+
+    // ---------- RENDER DEAL CARDS ----------
+    const grid = document.getElementById("deals-grid");
+
+    function dealCard(d) {
+      const pct = discountPercent(d.price, d.wasPrice);
+      return `
+        <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col relative overflow-hidden">
+          ${pct ? `
+            <div class="absolute top-3 left-3 text-xs font-bold text-white px-2 py-1 rounded"
+                 style="background: var(--ddf-orange);">
+              ${pct}% OFF
+            </div>` : ""}
+          <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
+            <img src="${d.img}" alt="${d.title}" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <h3 class="text-xl font-semibold">${d.title}</h3>
+          <p class="text-gray-600 text-sm mt-1">${d.desc}</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              ${typeof d.price === "number" ? `<span class="text-base font-semibold">${fmt(d.price)}</span>` : ""}
+              ${typeof d.wasPrice === "number" ? `<span class="text-sm text-gray-400 line-through">${fmt(d.wasPrice)}</span>` : ""}
+            </div>
+            <a href="${d.href}" target="_blank" rel="nofollow sponsored noopener"
+               class="font-semibold py-2 px-4 rounded text-white"
+               style="background: var(--ddf-orange);">
+              View on Amazon →
+            </a>
+          </div>
+          <div class="mt-3 text-xs text-gray-500">${d.category ? d.category : ""}</div>
+        </article>
+      `;
+    }
+
+    function renderDeals() {
+      const list = deals
+        .filter(d => activeCategory === "All" || (d.category || "").toLowerCase() === activeCategory.toLowerCase());
+
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px] col-span-full">
+            <div>
+              <p class="font-semibold">No items in "${activeCategory}" right now</p>
+              <p class="text-gray-600 text-sm mt-1">Check back soon — we update weekly.</p>
+            </div>
+          </article>`;
+        return;
+      }
+
+      grid.innerHTML = list.map(dealCard).join("");
+    }
+
+    // ---------- DATES ----------
     (function () {
-      const y = document.getElementById('year');
-      if (y) y.textContent = new Date().getFullYear();
       const lu = document.getElementById('last-updated');
       if (lu) lu.textContent = new Date().toLocaleDateString();
     })();
 
-    // Load partials (header + footer) and highlight active nav
+    // ---------- PARTIALS + NAV HIGHLIGHT ----------
     async function includePartial(selector, url, callback) {
       const host = document.querySelector(selector);
       if (!host) return;
@@ -169,19 +229,24 @@
     function highlightActiveNav() {
       const path = window.location.pathname.toLowerCase();
       document.querySelectorAll('#site-header .nav-link').forEach(link => {
-        const href = link.getAttribute('href').toLowerCase();
+        const href = link.getAttribute('href')?.toLowerCase() || "";
         const isActive =
           path.endsWith(href) ||
           (href === '/index.html' && (path === '/' || path.endsWith('/index.html')));
         if (isActive) {
           link.classList.remove('bg-white', 'text-blue-900', 'hover:bg-blue-100');
-          link.classList.add('bg-blue-700', 'text-white');
+          link.classList.add('text-white');
+          link.style.backgroundColor = "var(--ddf-orange)";
         }
       });
     }
 
     includePartial('#site-header', '/partials/header.html', highlightActiveNav);
     includePartial('#site-footer', '/partials/footer.html');
+
+    // ---------- INIT ----------
+    renderChips();
+    renderDeals();
   </script>
 </body>
 </html>
