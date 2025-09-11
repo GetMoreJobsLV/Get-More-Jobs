@@ -25,30 +25,34 @@
   <meta name="keywords" content="amazon deals, daily deals, product finds, trending products, save money" />
   <meta name="author" content="Get More Jobs" />
 
-  <!-- Open Graph Tags -->
+  <!-- Open Graph -->
   <meta property="og:title" content="DailyDealzFinder – Get More Jobs" />
   <meta property="og:description" content="Weekly updated Amazon deals curated by DailyDealzFinder (a GMJ brand)." />
   <meta property="og:image" content="https://yourdomain.com/images/logo2.png" />
-  <meta property="og:url" content="https://yourdomain.com/dailydealzfinder.html" />
+  <meta property="og:url" content="https://yourdomain.com/dailydealz.html" />
   <meta property="og:type" content="website" />
 
+  <!-- Brand accent (dark orange) -->
   <style>
-    /* Brand accent (dark orange) */
-    :root { --ddf-orange:#d86400; }
+    :root { --ddf-orange: #d86400; }
+    .btn-orange {
+      background: var(--ddf-orange);
+      color: #fff;
+    }
+    .btn-orange:hover { filter: brightness(0.95); }
   </style>
 </head>
 <body class="bg-white text-gray-800">
-
-  <!-- Header loaded via partial -->
+  <!-- Header (partial) -->
   <div id="site-header"></div>
 
   <!-- Hero -->
   <section class="bg-gray-100 py-16 text-center">
     <div class="max-w-3xl mx-auto px-6">
-      <h1 class="text-4xl font-bold mb-3">DailyDealzFinder</h1>
+      <h1 class="text-4xl font-extrabold mb-3 tracking-tight">DailyDealzFinder</h1>
       <p class="text-lg mb-6">Curated Amazon picks to save you time and money — <strong>updated weekly</strong>.</p>
-      <div class="inline-block bg-white border border-orange-200 text-orange-900 px-4 py-2 rounded-lg font-semibold"
-           style="--tw-border-opacity:1;border-color:rgba(216,100,0,0.3);color:var(--ddf-orange)">
+      <div class="inline-block bg-white border px-4 py-2 rounded-lg font-semibold"
+           style="border-color: rgba(216,100,0,0.3); color: var(--ddf-orange);">
         New drops every week • Bookmark this page
       </div>
     </div>
@@ -67,7 +71,7 @@
       <h2 class="text-3xl font-bold text-center mb-8">This Week’s Picks</h2>
 
       <div id="deals-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- JS will render cards here -->
+        <!-- JS renders cards here -->
       </div>
 
       <!-- Disclosure -->
@@ -78,52 +82,59 @@
     </div>
   </main>
 
-  <!-- Footer loaded via partial -->
+  <!-- Footer (partial) -->
   <div id="site-footer"></div>
 
-  <!-- Scripts -->
- <script>
-  // ---------- DATA: Edit this to update your page ----------
-  const deals = [
-    {
-      title: "Fan Cleaner Tool",
-      desc: "Easily clean ceiling fan blades — no mess, quick results.",
-      price: 24.99,        // change if you want
-      wasPrice: 32.99,     // optional: remove if not needed
-      img: "/assets/deals/fancleaner.jpg",   // 👈 your repo image
-      href: "https://amzn.to/3VPrkTP",       // 👈 your affiliate link
-      category: "Home"
-    }
-    // ,{ ...more deals here... }
-  ];
-</script>
-// ADD MORE HERE!!!!!
-
+  <!-- ===== Scripts ===== -->
+  <script>
+    /* --------------------------
+       DATA: Edit to update deals
+       -------------------------- */
+    const deals = [
+      {
+        title: "Fan Cleaner Tool",
+        desc: "Easily clean ceiling fan blades — no mess, quick results.",
+        price: 24.99,
+        wasPrice: 32.99,
+        img: "/assets/deals/fancleaner.jpg",
+        href: "https://amzn.to/3VPrkTP",
+        category: "Home"
       },
-      // Add more items here...
-      // {
-      //   title: "Nonstick Pan Set",
-      //   desc: "Easy cleanup, even heat — everyday essential.",
-      //   price: 39.99,
-      //   wasPrice: 59.99,
-      //   img: "/assets/placeholders/deal-2.jpg",
-      //   href: "https://amzn.to/xxxxxxx",
-      //   category: "Kitchen"
-      // },
+      {
+        title: "Wireless Earbuds (Budget Pick)",
+        desc: "Solid sound and battery life without breaking the bank.",
+        price: 19.99,
+        wasPrice: 29.99,
+        img: "/assets/deals/earbuds.jpg",     // add this file or replace path
+        href: "https://amzn.to/3VPrkTP",      // replace with product link
+        category: "Tech"
+      },
+      {
+        title: "Nonstick Pan Set",
+        desc: "Even heating and easy cleanup — everyday kitchen essential.",
+        price: 39.99,
+        wasPrice: 59.99,
+        img: "/assets/deals/pans.jpg",        // add this file or replace path
+        href: "https://amzn.to/3VPrkTP",
+        category: "Kitchen"
+      }
     ];
 
-    // Categories you want to show as chips; include "All"
+    // Categories (include "All")
     const categories = ["All", "Tech", "Home", "Kitchen", "Lifestyle", "Fitness"];
 
-    // ---------- UTILITIES ----------
-    const fmt = (n) => (typeof n === "number" ? `$${n.toFixed(2)}` : "");
-
+    /* --------------------------
+       Helpers
+       -------------------------- */
+    const fmt = n => (typeof n === "number" ? `$${n.toFixed(2)}` : "");
     function discountPercent(now, was) {
       if (typeof now !== "number" || typeof was !== "number" || was <= now) return null;
       return Math.round(((was - now) / was) * 100);
     }
 
-    // ---------- RENDER CATEGORY CHIPS ----------
+    /* --------------------------
+       Render Category Chips
+       -------------------------- */
     const chipsHost = document.getElementById("category-chips");
     let activeCategory = "All";
 
@@ -134,11 +145,8 @@
         btn.textContent = cat;
         const isActive = cat === activeCategory;
         btn.className =
-          "px-4 py-2 text-sm rounded-full border " +
-          (isActive
-            ? "text-white"
-            : "bg-white hover:bg-gray-50 text-gray-800") +
-          " transition";
+          "px-4 py-2 text-sm rounded-full border transition " +
+          (isActive ? "text-white" : "bg-white hover:bg-gray-50 text-gray-800");
         if (isActive) {
           btn.style.backgroundColor = "var(--ddf-orange)";
           btn.style.borderColor = "var(--ddf-orange)";
@@ -152,7 +160,9 @@
       });
     }
 
-    // ---------- RENDER DEAL CARDS ----------
+    /* --------------------------
+       Render Deal Cards
+       -------------------------- */
     const grid = document.getElementById("deals-grid");
 
     function dealCard(d) {
@@ -175,8 +185,7 @@
               ${typeof d.wasPrice === "number" ? `<span class="text-sm text-gray-400 line-through">${fmt(d.wasPrice)}</span>` : ""}
             </div>
             <a href="${d.href}" target="_blank" rel="nofollow sponsored noopener"
-               class="font-semibold py-2 px-4 rounded text-white"
-               style="background: var(--ddf-orange);">
+               class="btn-orange font-semibold py-2 px-4 rounded">
               View on Amazon →
             </a>
           </div>
@@ -186,8 +195,10 @@
     }
 
     function renderDeals() {
-      const list = deals
-        .filter(d => activeCategory === "All" || (d.category || "").toLowerCase() === activeCategory.toLowerCase());
+      const list = deals.filter(d =>
+        activeCategory === "All" ||
+        (d.category || "").toLowerCase() === activeCategory.toLowerCase()
+      );
 
       if (list.length === 0) {
         grid.innerHTML = `
@@ -203,13 +214,17 @@
       grid.innerHTML = list.map(dealCard).join("");
     }
 
-    // ---------- DATES ----------
+    /* --------------------------
+       Dates
+       -------------------------- */
     (function () {
       const lu = document.getElementById('last-updated');
       if (lu) lu.textContent = new Date().toLocaleDateString();
     })();
 
-    // ---------- PARTIALS + NAV HIGHLIGHT ----------
+    /* --------------------------
+       Partials + Active Nav
+       -------------------------- */
     async function includePartial(selector, url, callback) {
       const host = document.querySelector(selector);
       if (!host) return;
@@ -229,7 +244,7 @@
     function highlightActiveNav() {
       const path = window.location.pathname.toLowerCase();
       document.querySelectorAll('#site-header .nav-link').forEach(link => {
-        const href = link.getAttribute('href')?.toLowerCase() || "";
+        const href = (link.getAttribute('href') || "").toLowerCase();
         const isActive =
           path.endsWith(href) ||
           (href === '/index.html' && (path === '/' || path.endsWith('/index.html')));
@@ -244,7 +259,9 @@
     includePartial('#site-header', '/partials/header.html', highlightActiveNav);
     includePartial('#site-footer', '/partials/footer.html');
 
-    // ---------- INIT ----------
+    /* --------------------------
+       Init
+       -------------------------- */
     renderChips();
     renderDeals();
   </script>
