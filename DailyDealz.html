@@ -40,10 +40,8 @@
     .btn-orange:hover { filter: brightness(0.95); }
     .img-ratio { aspect-ratio: 1 / 1; object-fit: cover; }
     a, button { -webkit-tap-highlight-color: transparent; }
-    /* iOS safe-areas for sticky bars */
     .safe-top { padding-top: max(env(safe-area-inset-top), 0px); }
     .safe-bottom { padding-bottom: max(env(safe-area-inset-bottom), 0px); }
-    /* Horizontal chip scroller on mobile */
     .chip-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .chip-scroll::-webkit-scrollbar { display: none; }
   </style>
@@ -61,15 +59,13 @@
   <!-- Header (partial) -->
   <div id="site-header" class="pt-14"></div>
 
-  <!-- *** MOBILE-FIRST QUICK PICKS (first thing users see) *** -->
+  <!-- Quick Picks (first thing on phone) -->
   <section class="px-4 pt-3 max-w-screen-sm mx-auto" id="quick-picks">
     <h1 class="sr-only">Today’s Top Amazon Deals</h1>
-    <div id="quick-grid" class="grid grid-cols-1 gap-3">
-      <!-- JS inserts big quick buttons here -->
-    </div>
+    <div id="quick-grid" class="grid grid-cols-1 gap-3"></div>
   </section>
 
-  <!-- Hero (kept minimal & pushed below quick picks on mobile) -->
+  <!-- Hero -->
   <section class="bg-gray-100 py-8 sm:py-16 text-center mt-3">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-3xl sm:text-4xl font-extrabold mb-3 tracking-tight">DailyDealzFinder</h2>
@@ -97,11 +93,8 @@
   <main id="deals" class="pb-28 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h3 class="text-xl sm:text-3xl font-bold text-center mb-4 sm:mb-8">This Week’s Picks</h3>
-      <div id="deals-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
-        <!-- JS renders cards here -->
-      </div>
+      <div id="deals-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8"></div>
 
-      <!-- Disclosure -->
       <div class="mt-6 sm:mt-10 text-xs sm:text-sm text-gray-600 text-center px-4">
         <p><strong>Disclosure:</strong> As an Amazon Associate, we may earn from qualifying purchases. Prices and availability can change.</p>
       </div>
@@ -120,9 +113,12 @@
     </div>
   </nav>
 
-  <!-- ===== Scripts ===== -->
   <script>
-    // -------- Helpers
+    // ---------- WHERE YOUR PARTIALS & JSON LIVE ----------
+    const PARTIALS_BASE = '/partials';      // header.html, footer.html, deals.json are here
+    const DEALS_JSON    = PARTIALS_BASE + '/deals.json';
+
+    // ---------- Helpers ----------
     const fmt = n => (typeof n === "number" ? "$" + n.toFixed(2) : "");
     const pct = (now, was) => (typeof now==="number" && typeof was==="number" && was>now)
       ? Math.round(((was - now) / was) * 100) : null;
@@ -134,13 +130,13 @@
       } catch(e){}
     }
 
-    // -------- Partials
+    // ---------- Partials ----------
     async function includePartial(selector, url, callback) {
       const host = document.querySelector(selector);
       if (!host) return;
       try {
         const res = await fetch(url, { credentials: 'same-origin' });
-        if (!res.ok) throw new Error(\`Failed to load \${url} (\${res.status})\`);
+        if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
         host.innerHTML = await res.text();
         if (callback) callback();
       } catch (err) {
@@ -159,20 +155,21 @@
         }
       });
     }
+    includePartial('#site-header', PARTIALS_BASE + '/header.html', highlightActiveNav);
+    includePartial('#site-footer', PARTIALS_BASE + '/footer.html');
 
-    includePartial('#site-header', '/partials/header.html', highlightActiveNav);
-    includePartial('#site-footer', '/partials/footer.html');
-
-    // -------- Renderers
+    // ---------- DOM Targets ----------
     const chipsHost   = document.getElementById("category-chips");
     const dealsGrid   = document.getElementById("deals-grid");
     const quickGrid   = document.getElementById("quick-grid");
     const lastUpdated = document.getElementById("last-updated");
     const allDealsBtn = document.getElementById("all-deals-link");
+
     let allDeals = [];
     let activeCategory = "All";
     let categories = ["All"];
 
+    // ---------- Renderers ----------
     function renderChips() {
       chipsHost.innerHTML = "";
       categories.forEach(cat => {
@@ -249,26 +246,25 @@
       quickGrid.innerHTML = pinned.map(quickButton).join("");
     }
 
-    // -------- Load JSON
+    // ---------- Load JSON from /partials/deals.json ----------
     (async function init(){
       try {
-        const res = await fetch('/deals.json', { cache: 'no-store' });
+        const res = await fetch(DEALS_JSON, { cache: 'no-store' });
         const data = await res.json();
 
         allDeals = Array.isArray(data.deals) ? data.deals : data;
-        // categories
+
+        // categories (auto)
         const uniques = new Set(["All"]);
         allDeals.forEach(d => d.category && uniques.add(d.category));
         categories = Array.from(uniques);
 
-        // last updated
+        // last updated & "All Deals" link
         if (data.updatedAt && lastUpdated) {
           lastUpdated.textContent = new Date(data.updatedAt).toLocaleDateString();
         } else if (lastUpdated) {
           lastUpdated.textContent = new Date().toLocaleDateString();
         }
-
-        // optional link to “All Deals”
         if (data.allDealsUrl && allDealsBtn) {
           allDealsBtn.href = data.allDealsUrl;
         } else {
@@ -280,8 +276,8 @@
         renderDeals();
       } catch (e) {
         console.error(e);
-        document.getElementById('deals-grid').innerHTML =
-          '<div class="col-span-full p-4 bg-red-50 text-red-700 rounded">Could not load deals.json</div>';
+        dealsGrid.innerHTML =
+          '<div class="col-span-full p-4 bg-red-50 text-red-700 rounded">Could not load /partials/deals.json</div>';
       }
     })();
   </script>
