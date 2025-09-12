@@ -1,0 +1,55 @@
+{
+  "updatedAt": "2025-09-12T00:00:00Z",
+  "allDealsUrl": "https://www.amazon.com/shop/yourstore", 
+  "deals": [
+    {
+      "title": "Colander & Bowl 4-in-1 Set",
+      "desc": "Strain, rinse, and prep faster with this 4-in-1 kitchen colander + bowl combo.",
+      "price": 24.99,
+      "wasPrice": null,
+      "img": "/assets/deals/collanderbowl.jpg",
+      "href": "https://amzn.to/41TFKG5",
+      "category": "Home",
+      "badge": "Kitchen Favorite",
+      "pin": true,
+      "quickLabel": "🔥 4-in-1 Colander & Bowl",
+      "quickBadge": "Top Pick"
+    },
+    {
+      "title": "Beats Wireless Earbuds",
+      "desc": "Crisp sound and comfy fit — a solid pick when it’s discounted.",
+      "price": 99.99,
+      "wasPrice": 169.95,
+      "img": "/assets/deals/beatsearbuds.jpg",
+      "href": "https://amzn.to/3JWmDFg",
+      "category": "Tech",
+      "badge": "-41%",
+      "pin": true,
+      "quickLabel": "⚡ Beats Earbuds on Sale",
+      "quickBadge": "Limited Time"
+    },
+    {
+      "title": "Ceiling Fan Blade Cleaner",
+      "desc": "Clean fan blades quickly with less mess — easy and effective.",
+      "price": 24.99,
+      "wasPrice": 32.99,
+      "img": "/assets/deals/fancleaner.jpg",
+      "href": "https://amzn.to/3VPrkTP",
+      "category": "Home",
+      "badge": "-24%",
+      "pin": true,
+      "quickLabel": "🧹 Fan Cleaner Tool",
+      "quickBadge": "Trending"
+    },
+    {
+      "title": "Fanhaw Insulated Water Bottle (20–32 oz)",
+      "desc": "Vacuum-insulated stainless bottle — cold for hours, leak-resistant pop-open lid.",
+      "price": 15.99,
+      "wasPrice": 16.99,
+      "img": "/assets/deals/fanhowbottle.jpg",
+      "href": "https://amzn.to/4617Lhy",
+      "category": "Lifestyle",
+      "badge": "-6%"
+    }
+  ]
+}
