@@ -9,10 +9,7 @@
   <link rel="icon" href="/favicon.png" type="image/png" />
 
   <!-- Tailwind CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
@@ -24,22 +21,13 @@
   </script>
 
   <!-- SEO Meta Tags -->
-  <meta
-    name="description"
-    content="DailyDealzFinder by Get More Jobs — weekly updated Amazon deal picks with quick links and short descriptions."
-  />
-  <meta
-    name="keywords"
-    content="amazon deals, daily deals, product finds, trending products, save money"
-  />
+  <meta name="description" content="DailyDealzFinder by Get More Jobs — weekly updated Amazon deal picks with quick links and short descriptions." />
+  <meta name="keywords" content="amazon deals, daily deals, product finds, trending products, save money" />
   <meta name="author" content="Get More Jobs" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="DailyDealzFinder – Get More Jobs" />
-  <meta
-    property="og:description"
-    content="Weekly updated Amazon deals curated by DailyDealzFinder (a GMJ brand)."
-  />
+  <meta property="og:description" content="Weekly updated Amazon deals curated by DailyDealzFinder (a GMJ brand)." />
   <meta property="og:image" content="https://yourdomain.com/images/logo2.png" />
   <meta property="og:url" content="https://yourdomain.com/dailydealz.html" />
   <meta property="og:type" content="website" />
@@ -62,10 +50,8 @@
       <p class="text-lg mb-6">
         Curated Amazon picks to save you time and money — <strong>updated weekly</strong>.
       </p>
-      <div
-        class="inline-block bg-white border px-4 py-2 rounded-lg font-semibold"
-        style="border-color: rgba(216,100,0,0.3); color: var(--ddf-orange);"
-      >
+      <div class="inline-block bg-white border px-4 py-2 rounded-lg font-semibold"
+           style="border-color: rgba(216,100,0,0.3); color: var(--ddf-orange);">
         New drops every week • Bookmark this page
       </div>
       <div class="mt-3 text-sm text-gray-600">
@@ -92,9 +78,7 @@
 
       <!-- Disclosure -->
       <div class="mt-10 text-sm text-gray-600 text-center">
-        <p>
-          <strong>Note:</strong> Some links are affiliate links. We may earn a commission at no extra cost to you.
-        </p>
+        <p><strong>Note:</strong> Some links are affiliate links. We may earn a commission at no extra cost to you.</p>
       </div>
     </div>
   </main>
@@ -152,7 +136,7 @@
     /* --------------------------
        Helpers
        -------------------------- */
-    const fmt = n => (typeof n === "number" ? $${n.toFixed(2)} : "");
+    const fmt = n => (typeof n === "number" ? ('$' + n.toFixed(2)) : "");
     function discountPercent(now, was) {
       if (typeof now !== "number" || typeof was !== "number" || was <= now) return null;
       return Math.round(((was - now) / was) * 100);
@@ -193,33 +177,32 @@
 
     function dealCard(d) {
       const pct = discountPercent(d.price, d.wasPrice);
-      return <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col relative overflow-hidden">
-        ${pct ? <div class="absolute top-3 left-3 text-xs font-bold text-white px-2 py-1 rounded"
-             style="background: var(--ddf-orange);">
-          ${pct}% OFF
-        </div> : ""}
-        <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
-          <img src="${d.img}" alt="${d.title}" class="w-full h-full object-cover" loading="lazy">
-        </div>
-        <h3 class="text-xl font-semibold">${d.title}</h3>
-        <p class="text-gray-600 text-sm mt-1">${d.desc}</p>
-        <div class="mt-3 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            ${typeof d.price === "number" ? <span class="text-base font-semibold">${fmt(d.price)}</span> : ""}
-            ${typeof d.wasPrice === "number" ? <span class="text-sm text-gray-400 line-through">${fmt(d.wasPrice)}</span> : ""}
+      return `
+        <article class="bg-gray-50 rounded-lg shadow p-4 border flex flex-col relative overflow-hidden">
+          ${pct ? `
+            <div class="absolute top-3 left-3 text-xs font-bold text-white px-2 py-1 rounded"
+                 style="background: var(--ddf-orange);">
+              ${pct}% OFF
+            </div>
+          ` : ""}
+          <div class="w-full h-48 bg-gray-200 rounded mb-3 overflow-hidden">
+            <img src="${d.img}" alt="${d.title}" class="w-full h-full object-cover" loading="lazy">
           </div>
-          <a
-            href="${d.href}"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-            class="btn-orange font-semibold py-2 px-4 rounded"
-          >
-            View on Amazon →
-          </a>
-        </div>
-        <div class="mt-3 text-xs text-gray-500">${d.category ? d.category : ""}</div>
-      </article>
-      ;
+          <h3 class="text-xl font-semibold">${d.title}</h3>
+          <p class="text-gray-600 text-sm mt-1">${d.desc}</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              ${typeof d.price === "number" ? `<span class="text-base font-semibold">${fmt(d.price)}</span>` : ""}
+              ${typeof d.wasPrice === "number" ? `<span class="text-sm text-gray-400 line-through">${fmt(d.wasPrice)}</span>` : ""}
+            </div>
+            <a href="${d.href}" target="_blank" rel="nofollow sponsored noopener"
+               class="btn-orange font-semibold py-2 px-4 rounded">
+              View on Amazon →
+            </a>
+          </div>
+          <div class="mt-3 text-xs text-gray-500">${d.category ? d.category : ""}</div>
+        </article>
+      `;
     }
 
     function renderDeals() {
@@ -229,12 +212,14 @@
       );
 
       if (list.length === 0) {
-        grid.innerHTML = <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px] col-span-full">
-          <div>
-            <p class="font-semibold">No items in "${activeCategory}" right now</p>
-            <p class="text-gray-600 text-sm mt-1">Check back soon — we update weekly.</p>
-          </div>
-        </article>;
+        grid.innerHTML = `
+          <article class="bg-gray-50 rounded-lg shadow p-6 border flex items-center justify-center text-center min-h-[220px] col-span-full">
+            <div>
+              <p class="font-semibold">No items in "${activeCategory}" right now</p>
+              <p class="text-gray-600 text-sm mt-1">Check back soon — we update weekly.</p>
+            </div>
+          </article>
+        `;
         return;
       }
 
@@ -257,14 +242,16 @@
       if (!host) return;
       try {
         const res = await fetch(url, { credentials: 'same-origin' });
-        if (!res.ok) throw new Error(Failed to load ${url} (${res.status}));
+        if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
         host.innerHTML = await res.text();
         if (callback) callback();
       } catch (err) {
         console.error(err);
-        host.innerHTML = <div style="padding:8px;background:#fee;color:#900">
-          Failed to load ${url}.
-        </div>;
+        host.innerHTML = `
+          <div style="padding:8px;background:#fee;color:#900">
+            Failed to load ${url}.
+          </div>
+        `;
       }
     }
 
