@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Get More Jobs – B2B Growth for Local Service Businesses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Get More Jobs helps local service businesses like contractors, cleaners, and law firms get more calls, quotes, and booked jobs using data-driven ads and simple funnels."
+  />
+
+  <!-- Favicon – update href to your latest solid blue briefcase icon -->
+  <link rel="icon" type="image/png" href="/assets/logo-briefcase-blue.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Analytics (GA4) – Tracking ID G-KNDTWBK3QF -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KNDTWBK3QF');
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo (wrapped in link to index.html) -->
+        <a href="index.html" class="flex items-center gap-2">
+          <img
+            src="/assets/logo-1-full.png"
+            alt="Get More Jobs logo"
+            class="h-8 w-auto"
+          />
+          <span class="font-semibold tracking-tight text-slate-900">
+            Get More Jobs
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+          <a href="#services" class="hover:text-blue-600">What We Do</a>
+          <a href="#industries" class="hover:text-blue-600">Who We Help</a>
+          <a href="#results" class="hover:text-blue-600">Results</a>
+          <a href="#clients" class="hover:text-blue-600">Current Clients</a>
+          <a href="#process" class="hover:text-blue-600">How It Works</a>
+          <a href="#contact" class="hover:text-blue-600">Contact</a>
+          <a
+            href="#contact"
+            class="ml-4 inline-flex items-center rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700"
+          >
+            Book a Call
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.2em] text-blue-300 uppercase mb-4">
+              B2B GROWTH FOR LOCAL SERVICE BUSINESSES
+            </p>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+              We turn online clicks into <span class="text-blue-300">booked jobs</span>,
+              not just “traffic.”
+            </h1>
+            <p class="text-sm sm:text-base text-slate-200 mb-6 max-w-xl">
+              Get More Jobs builds simple, profitable systems that connect
+              homeowners and local customers directly to your business via calls,
+              forms, and booked appointments—without you having to learn ads
+              yourself.
+            </p>
+
+            <ul class="text-sm text-slate-200 space-y-2 mb-8">
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-2 w-2 rounded-full bg-blue-400"></span>
+                <span>We manage your Meta, Google, and YouTube ads.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-2 w-2 rounded-full bg-blue-400"></span>
+                <span>We optimize for calls and closed jobs, not vanity metrics.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-2 w-2 rounded-full bg-blue-400"></span>
+                <span>Clear reporting so you see exactly where your leads come from.</span>
+              </li>
+            </ul>
+
+            <div class="flex flex-wrap gap-4 mb-8">
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center rounded-full bg-blue-500 px-6 py-2.5 text-sm font-semibold text-white shadow hover:bg-blue-600"
+              >
+                Schedule a Strategy Call
+              </a>
+              <a
+                href="#results"
+                class="inline-flex items-center justify-center rounded-full border border-slate-500 px-6 py-2.5 text-sm font-semibold text-slate-100 hover:bg-slate-800"
+              >
+                See Client Results
+              </a>
+            </div>
+
+            <!-- Quick stats -->
+            <dl class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+              <div>
+                <dt class="text-slate-400">Local markets managed</dt>
+                <dd class="font-semibold text-white text-lg">10+</dd>
+              </div>
+              <div>
+                <dt class="text-slate-400">Average lead volume increase</dt>
+                <dd class="font-semibold text-white text-lg">2–4×</dd>
+              </div>
+              <div>
+                <dt class="text-slate-400">Focus</dt>
+                <dd class="font-semibold text-white text-lg">Service businesses</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Right: “Results snapshot” style card -->
+          <div class="hidden md:block">
+            <div class="bg-slate-900/60 border border-slate-700 rounded-2xl p-6 shadow-xl">
+              <h2 class="text-sm font-semibold text-slate-100 mb-4">
+                Live Campaign Snapshot (Example)
+              </h2>
+              <div class="space-y-4 text-xs text-slate-200">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium">Auto Injury Law Firm</span>
+                  <span class="text-emerald-300 font-semibold">+183 calls/mo</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-slate-400">Cost per qualified call</span>
+                  <span class="font-semibold">$27.45</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-medium">Pet Cleanup Service</span>
+                  <span class="text-emerald-300 font-semibold">+96 new clients</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-slate-400">Avg. CTR</span>
+                  <span class="font-semibold">3.8%</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-medium">Painting Contractor</span>
+                  <span class="text-emerald-300 font-semibold">Calendar filled 4–6 weeks</span>
+                </div>
+              </div>
+              <p class="mt-4 text-[0.7rem] text-slate-400">
+                *Data shown for illustration. We’ll plug in your real numbers as we
+                scale your campaigns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who We Help / Industries -->
+    <section id="industries" class="py-14 sm:py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+              Built for local service businesses.
+            </h2>
+            <p class="mt-2 text-sm text-slate-600 max-w-xl">
+              If your business depends on local homeowners or residents finding you
+              and booking work, we’re your growth partner.
+            </p>
+          </div>
+          <p class="text-xs text-slate-500 max-w-sm">
+            We focus on a few verticals so we actually understand your customers,
+            your seasonality, and your margins.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <h3 class="font-semibold text-slate-900 mb-1">Home Improvement Contractors</h3>
+            <p class="text-xs text-slate-600 mb-3">
+              Painters, flooring, concrete polishing, remodelers, and similar trades.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-1">
+              <li>• Estimate requests from real homeowners</li>
+              <li>• Job pipeline you can see, not guess</li>
+              <li>• Focus on bigger, more profitable jobs</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <h3 class="font-semibold text-slate-900 mb-1">Cleaning & Recurring Services</h3>
+            <p class="text-xs text-slate-600 mb-3">
+              Pet cleanup, house cleaning, lawn care, pool services, etc.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-1">
+              <li>• Subscription-based campaign strategies</li>
+              <li>• Route density & neighborhood targeting</li>
+              <li>• Lifetime value, not one-off jobs</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <h3 class="font-semibold text-slate-900 mb-1">Professional Services</h3>
+            <p class="text-xs text-slate-600 mb-3">
+              Law firms and other lead-driven local pros.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-1">
+              <li>• Call-focused lead flows</li>
+              <li>• Ad copy dialed into your niche</li>
+              <li>• Compliance-friendly funnels</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do (Services) -->
+    <section id="services" class="py-14 sm:py-16 bg-slate-900 text-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+              What we do for your business.
+            </h2>
+            <p class="mt-2 text-sm text-slate-300 max-w-xl">
+              We’re not just “running ads.” We build a simple system that takes a
+              stranger from an ad to a booked job with as few steps as possible.
+            </p>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm">
+            Strategy, creative, tracking, and optimization—handled for you, but
+            explained in plain English.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 text-sm">
+          <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+            <h3 class="font-semibold mb-2">Full-Funnel Ad Management</h3>
+            <p class="text-slate-200 mb-3">
+              Meta, Google, and YouTube campaigns designed to drive calls and quote
+              requests—not just views.
+            </p>
+            <ul class="space-y-1 text-xs text-slate-300">
+              <li>• Campaign strategy & setup</li>
+              <li>• Ongoing creative testing</li>
+              <li>• Budget & bid optimization</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+            <h3 class="font-semibold mb-2">Lead Capture & Follow-Up</h3>
+            <p class="text-slate-200 mb-3">
+              Simple landing pages and forms that feed leads into your CRM,
+              inbox, or call system.
+            </p>
+            <ul class="space-y-1 text-xs text-slate-300">
+              <li>• High-converting landing pages</li>
+              <li>• Call-tracking & form tracking</li>
+              <li>• Automatic lead notifications</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+            <h3 class="font-semibold mb-2">Reporting You Can Actually Read</h3>
+            <p class="text-slate-200 mb-3">
+              See what you’re spending, what you’re getting, and which campaigns
+              are filling your calendar.
+            </p>
+            <ul class="space-y-1 text-xs text-slate-300">
+              <li>• Monthly performance summaries</li>
+              <li>• Cost-per-lead & cost-per-call</li>
+              <li>• Job pipeline visibility</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results / Data Section -->
+    <section id="results" class="py-14 sm:py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+              Current performance snapshots.
+            </h2>
+            <p class="mt-2 text-sm text-slate-600 max-w-xl">
+              Here’s the kind of movement we look for: lower cost per lead,
+              higher quality calls, and calendars that stay full.
+            </p>
+          </div>
+          <p class="text-xs text-slate-500 max-w-sm">
+            We’ll add your real numbers here as we scale with you.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center text-sm">
+          <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-5">
+            <p class="text-xs uppercase tracking-wide text-slate-500 mb-1">
+              Auto Injury Law Firm
+            </p>
+            <p class="text-2xl font-bold text-slate-900 mb-1">+183</p>
+            <p class="text-xs text-slate-600">qualified calls per month</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-5">
+            <p class="text-xs uppercase tracking-wide text-slate-500 mb-1">
+              Pet Cleanup Service
+            </p>
+            <p class="text-2xl font-bold text-slate-900 mb-1">+96</p>
+            <p class="text-xs text-slate-600">new monthly clients added</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-5">
+            <p class="text-xs uppercase tracking-wide text-slate-500 mb-1">
+              House Painting
+            </p>
+            <p class="text-2xl font-bold text-slate-900 mb-1">4–6 weeks</p>
+            <p class="text-xs text-slate-600">calendar consistently booked out</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-5">
+            <p class="text-xs uppercase tracking-wide text-slate-500 mb-1">
+              Avg. Lead Cost
+            </p>
+            <p class="text-2xl font-bold text-slate-900 mb-1">↓ 37%</p>
+            <p class="text-xs text-slate-600">reduction vs. previous setups</p>
+          </div>
+        </div>
+
+        <p class="mt-4 text-[0.7rem] text-slate-500">
+          *These are representative examples. Exact results depend on your market,
+          offer, and sales process.
+        </p>
+      </div>
+    </section>
+
+    <!-- Current Clients / Logos -->
+    <section id="clients" class="py-14 sm:py-16 bg-slate-900 text-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+              Current partners & active campaigns.
+            </h2>
+            <p class="mt-2 text-sm text-slate-300 max-w-xl">
+              We work quietly in the background so our clients can focus on
+              serving their customers—not debugging ad dashboards.
+            </p>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm">
+            Add your client logos here for instant trust: painters, pet cleanup,
+            law firms, and other local service businesses.
+          </p>
+        </div>
+
+        <!-- Logo-style cards (replace with real logos/images later) -->
+        <div class="grid sm:grid-cols-3 gap-6 text-sm">
+          <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-4 flex flex-col justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-wide text-blue-300 mb-1">
+                Personal Injury Law
+              </p>
+              <h3 class="font-semibold mb-2">Injury Law Firm</h3>
+              <p class="text-xs text-slate-300">
+                “We wanted calls, not just clicks. Get More Jobs helped us dial
+                in campaigns that actually drive case inquiries.”
+              </p>
+            </div>
+            <p class="mt-3 text-[0.7rem] text-slate-400">
+              Primary KPI: cost per qualified phone call.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-4 flex flex-col justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-wide text-blue-300 mb-1">
+                Pet Cleanup
+              </p>
+              <h3 class="font-semibold mb-2">Alpha Pet Cleanups</h3>
+              <p class="text-xs text-slate-300">
+                “Consistent new routes every month and steady subscription sign-ups
+                from local neighborhoods.”
+              </p>
+            </div>
+            <p class="mt-3 text-[0.7rem] text-slate-400">
+              Primary KPI: new recurring customers per month.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-4 flex flex-col justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-wide text-blue-300 mb-1">
+                Residential Painting
+              </p>
+              <h3 class="font-semibold mb-2">Local Painting Contractor</h3>
+              <p class="text-xs text-slate-300">
+                “Our calendar stays full, and we can choose the jobs that make
+                the most sense for us.”
+              </p>
+            </div>
+            <p class="mt-3 text-[0.7rem] text-slate-400">
+              Primary KPI: job requests in target ZIP codes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="process" class="py-14 sm:py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+            Our process is simple on purpose.
+          </h2>
+          <p class="mt-2 text-sm text-slate-600 max-w-xl mx-auto">
+            You don’t need another complicated funnel. You need a clear way for
+            the right people to find you, contact you, and book in.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 text-sm">
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-600 text-white text-xs font-semibold mb-3">
+              1
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-2">Call & Mapping</h3>
+            <p class="text-slate-600">
+              We learn your business, margins, ideal jobs, and service area. Then
+              we map out a simple ad + lead flow that makes sense for you.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-600 text-white text-xs font-semibold mb-3">
+              2
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-2">Launch & Learn</h3>
+            <p class="text-slate-600">
+              We launch campaigns, track calls and leads, and quickly learn what
+              messages and neighborhoods deliver the best jobs.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-600 text-white text-xs font-semibold mb-3">
+              3
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-2">Scale What Works</h3>
+            <p class="text-slate-600">
+              We double down on winning campaigns, adjust budgets, and keep you
+              in the loop with simple reports and strategy calls.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="py-14 sm:py-16 bg-slate-900 text-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+          Ready to get more jobs from your marketing?
+        </h2>
+        <p class="mt-3 text-sm text-slate-300">
+          Tell us a little about your business, and we’ll see if we’re a good fit.
+          No pressure, no hard pitch—just a clear game plan.
+        </p>
+
+        <!-- Simple contact form (Netlify-ready if you’re using Netlify) -->
+        <form
+          class="mt-8 grid gap-4 text-left"
+          name="gmj-b2b-contact"
+          method="POST"
+          data-netlify="true"
+        >
+          <input type="hidden" name="form-name" value="gmj-b2b-contact" />
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium text-slate-200 mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full rounded-md border border-slate-600 bg-slate-800 text-sm text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-200 mb-1">
+                Business Name
+              </label>
+              <input
+                type="text"
+                name="business"
+                class="w-full rounded-md border border-slate-600 bg-slate-800 text-sm text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium text-slate-200 mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                class="w-full rounded-md border border-slate-600 bg-slate-800 text-sm text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-200 mb-1">
+                Phone (for callback)
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                class="w-full rounded-md border border-slate-600 bg-slate-800 text-sm text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-slate-200 mb-1">
+              What kind of work do you want more of?
+            </label>
+            <textarea
+              name="message"
+              rows="4"
+              class="w-full rounded-md border border-slate-600 bg-slate-800 text-sm text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Example: interior repaint jobs in [city], pet cleanup routes in [neighborhoods], auto injury cases, etc."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="mt-2 inline-flex justify-center rounded-full bg-blue-500 px-6 py-2.5 text-sm font-semibold text-white shadow hover:bg-blue-600"
+          >
+            Send My Info
+          </button>
+
+          <p class="mt-2 text-[0.7rem] text-slate-400">
+            We respect your time. Expect a short reply with next steps, not a
+            spam sequence.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© <span id="year"></span> Get More Jobs. All rights reserved.</p>
+      <p>Helping local service businesses get more of the right jobs.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
