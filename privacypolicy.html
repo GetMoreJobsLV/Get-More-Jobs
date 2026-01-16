@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Get More Jobs</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- SEO -->
+  <meta name="description" content="Get More Jobs privacy policy: what data we collect, how we use it, and how we share it with relevant local service providers to fulfill service requests." />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNDTWBK3QF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KNDTWBK3QF');
+  </script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header loaded via partial -->
+  <div id="site-header"></div>
+
+  <!-- Hero -->
+  <section class="bg-gray-100 py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold mb-3">Privacy Policy</h1>
+      <p class="text-gray-700">
+        This policy explains what information we collect, how we use it, and when we share it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose max-w-none">
+        <p class="text-sm text-gray-500 mb-6">
+          Effective date: <span id="effective-date"></span>
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Who We Are</h2>
+        <p>
+          Get More Jobs operates as an advertising agency that helps connect users with relevant local service providers.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Information We Collect</h2>
+        <p>
+          We may collect contact and request information submitted through our advertising and messaging experiences,
+          including:
+        </p>
+        <ul class="list-disc pl-6">
+          <li>Name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <li>City/area or general location information you provide</li>
+          <li>Message content and details about the service you’re requesting</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">How We Use Information</h2>
+        <p>
+          We use this information solely to respond to your request, including providing a quote, scheduling service,
+          or connecting you with a relevant local service provider (such as a car detailing business).
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">How We Share Information</h2>
+        <p>
+          We may share submitted information with vetted local service providers for the sole purpose of providing
+          quotes or scheduling requested services. Service providers may vary by location and availability.
+        </p>
+        <p>
+          We do not sell personal data.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Data Retention</h2>
+        <p>
+          We retain information only as long as needed to fulfill your request and for reasonable business or legal
+          recordkeeping purposes.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Your Choices</h2>
+        <p>
+          You may request information about your data or ask that we delete it. To do so, contact us using the
+          details below.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Contact Us</h2>
+        <p>
+          For questions or requests related to this policy, contact us at:
+        </p>
+        <ul class="list-disc pl-6">
+          <li><strong>Email:</strong> <a class="text-blue-800 underline" href="mailto:contact@getmorejobs.net">contact@getmorejobs.net</a></li>
+          <li><strong>Website:</strong> Get More Jobs</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Updates to This Policy</h2>
+        <p>
+          We may update this policy from time to time. When we do, we will revise the effective date at the top of
+          this page.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer loaded via partial -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script>
+    // Set effective date to today's date (client-side)
+    document.addEventListener("DOMContentLoaded", () => {
+      const el = document.getElementById("effective-date");
+      if (el) {
+        const d = new Date();
+        el.textContent = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+      }
+    });
+
+    // Load partials (header + footer) and highlight active nav
+    async function includePartial(selector, url, callback) {
+      const host = document.querySelector(selector);
+      if (!host) return;
+      try {
+        const res = await fetch(url, { credentials: 'same-origin' });
+        if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
+        host.innerHTML = await res.text();
+        if (callback) callback();
+      } catch (err) {
+        console.error(err);
+        host.innerHTML = `<div style="padding:8px;background:#fee;color:#900">
+          Failed to load ${url}.
+        </div>`;
+      }
+    }
+
+    function highlightActiveNav() {
+      const path = window.location.pathname.toLowerCase();
+      document.querySelectorAll('#site-header .nav-link').forEach(link => {
+        const href = link.getAttribute('href').toLowerCase();
+        const isActive =
+          path.endsWith(href) ||
+          (href === '/index.html' && (path === '/' || path.endsWith('/index.html')));
+        if (isActive) {
+          link.classList.remove('bg-white', 'text-blue-900', 'hover:bg-blue-100');
+          link.classList.add('bg-blue-700', 'text-white');
+        }
+      });
+    }
+
+    includePartial('#site-header', '/partials/header.html', highlightActiveNav);
+    includePartial('#site-footer', '/partials/footer.html');
+  </script>
+</body>
+</html>
